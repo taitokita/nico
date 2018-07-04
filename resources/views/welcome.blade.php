@@ -6,7 +6,9 @@
             <div class="cover-contents">
                 <h1>Nico</h1>
                 <h1>終業後の時間をデザインする</h1>
-                <a href="" class="btn btn-success btn-lg">検索</a>
+                @if (!Auth::check())
+                    <a href="{{ route('signup.get') }}" class="btn btn-success btn-lg">検索</a>
+                @endif
             </div>
         </div>
     </div>
