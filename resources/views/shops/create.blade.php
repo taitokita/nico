@@ -4,15 +4,28 @@
     <div class="search">
         <div class="row">
             <div class="text-center">
-                {!! Form::open(['route' => 'shops.create', 'method' => 'get', 'class' => 'form-inline']) !!}
-                    <div class="form-group">
-                       
-                    </div>
-                    {!! Form::submit('ショップを検索', ['class' => 'btn btn-success btn-lg']) !!}
-                {!! Form::close() !!}
+                    {!! Form::model($shop, ['route' => 'shops.store', 'enctype'=>'multipart/form-data']) !!}
+            
+                <div class="form-group">
+                    {!! Form::label('name', 'Bijo名:') !!}
+                    {!! Form::text('name', null, ['class' => 'form-control input-lg', 'placeholder' => 'Bijo名を入力', 'size' => 40]) !!}
+                </div>
+                    
+                <div class="form-group">
+                    {!! Form::label('content', 'コメント:') !!}
+                    {!! Form::text('content', null, ['class' => 'form-control input-lg', 'placeholder' => 'profileを入力', 'size' => 40]) !!}
+                </div>
+                
+                <div class="form-group">
+                    <label for="photo">画像ファイル:</label>
+                    {!! Form::file('photo') !!}
+                </div>
+                
+                {!! Form::submit('投稿', ['class' => 'btn btn-primary lg']) !!}
+        
+            {!! Form::close() !!}
             </div>
         </div>
     </div>
 
-    @include('shops.shops', ['shops' => $shops])
 @endsection

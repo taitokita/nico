@@ -1,11 +1,9 @@
-@if (Auth::user()->is_favoriteing($shop->code))
-    {!! Form::open(['route' => 'shop_user.dont_favorite', 'method' => 'delete']) !!}
-        {!! Form::hidden('shopCode', $shop->code) !!}
-        {!! Form::submit('Favorite', ['class' => 'btn btn-success']) !!}
-    {!! Form::close() !!}
+@if (Auth::user()->is_favoriteing($shop->id))
+        {!! Form::open(['route' => ['user.unfavorite', $shop->id], 'method' => 'delete']) !!}
+            {!! Form::submit('UnLike', ['class' => "btn btn-danger"]) !!}
+        {!! Form::close() !!}
 @else
-    {!! Form::open(['route' => 'shop_user.favorite']) !!}
-        {!! Form::hidden('shopCode', $shop->code) !!}
-        {!! Form::submit('Favorite it', ['class' => 'btn btn-primary']) !!}
-    {!! Form::close() !!}
+        {!! Form::open(['route' => ['user.favorite', $shop->id]]) !!}
+            {!! Form::submit('Like', ['class' => "btn btn-primary"]) !!}
+        {!! Form::close() !!}
 @endif

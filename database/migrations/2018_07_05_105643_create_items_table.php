@@ -4,23 +4,20 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateShopsTable extends Migration
+class CreateItemsTable extends Migration
 {
-   
-     public function up()
+    public function up()
     {
-        Schema::create('shops', function (Blueprint $table) {
+        Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('jan')->uniqid();
             $table->string('name');
-            $table->string('content');
-            $table->string('path');
-            $table->integer('user_id')->unsigned()->index();
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('shops');
+        Schema::dropIfExists('items');
     }
 }

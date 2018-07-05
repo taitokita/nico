@@ -25,3 +25,15 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('shops', 'ShopsController', ['only' => ['store', 'destroy']]);
 });
+
+Route::get('/items', 'ItemController@index');
+Route::match(['GET', 'POST'], '/create', 'ItemController@create');
+
+Route::get('/shop', 'ShopsController@index');
+
+Route::resource('shops', 'ShopsController');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+    Route::resource('shops', 'ShopsController');
+});

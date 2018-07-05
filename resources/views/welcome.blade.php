@@ -9,6 +9,7 @@
                 @if (!Auth::check())
                     <a href="{{ route('signup.get') }}" class="btn btn-success btn-lg">検索</a>
                 @endif
+                <a href="{{ route('shops.index') }}" class="btn btn-success btn-lg">index</a>
             </div>
         </div>
     </div>
