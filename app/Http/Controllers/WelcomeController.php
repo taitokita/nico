@@ -12,6 +12,9 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        $shops = Shop::orderBy('updated_at', 'desc')->paginate(20);
+        return view('welcome', [
+            'shops' => $shops,
+        ]);
     }
 }

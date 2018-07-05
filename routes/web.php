@@ -15,3 +15,13 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('shops', 'ShopsController', ['only' => ['create']]);
 });
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+    Route::group(['prefix' => 'users/{id}'], function () {
+        Route::post('favorite', 'UserFavoriteController@store')->name('user.favorite');
+        Route::delete('unfavorite', 'UserFavoriteController@destroy')->name('user.unfavorite');
+        Route::get('favoriteings', 'UsersController@favoriteings')->name('users.favoriteings');
+    });
+
+    Route::resource('shops', 'ShopsController', ['only' => ['store', 'destroy']]);
+});

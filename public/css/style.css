@@ -70,3 +70,12 @@ footer {
     -webkit-line-clamp: 2;
     overflow: hidden;
 }
+
+/* shop */
+.shop .panel-body {
+    height: 120px;
+}
+.shop .buttons form {
+    display: inline-block;
+    margin: 0 5px;
+}
