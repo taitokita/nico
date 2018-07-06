@@ -14,7 +14,7 @@ class UsersController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        $count_favorite = $user->favorite_shops()->count();
+        //$count_favorite = $user->favorite_shops()->count();
          
         //  $shops = Shop::all();
          $shops = \DB::table('shops')
@@ -28,7 +28,7 @@ class UsersController extends Controller
         $data = [
             'user' => $user,
             'shops' => $shops,
-            'count_favorite' => $count_favorite,
+            //'count_favorite' => $count_favorite,
             
         ];
         $data += $this->counts($user);

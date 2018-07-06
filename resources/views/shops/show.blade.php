@@ -20,10 +20,10 @@
   
     
     <div>
-            {!! link_to_route('shops.edit', 'このBijoを編集', ['id' => $shop->id], ['class' => 'btn btn-default']) !!}
+            {!! link_to_route('shops.edit', 'このShopを編集', ['id' => $shop->id], ['class' => 'btn btn-default']) !!}
         
         　　{!! Form::model($shop, ['route' => ['shops.destroy', $shop->id], 'method' => 'delete']) !!}
-                {!! Form::submit('バイバイする', ['class' => 'btn btn-danger']) !!}
+                {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
             {!! Form::close() !!}
             
             @include('shops.favorite_button', ['shop' => $shop],['class' => 'btn'])
