@@ -46,3 +46,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
     Route::resource('reviews', 'ReviewsController', ['only' => ['store', 'destroy']]);
 });
+
+// Ranking
+Route::get('ranking/favorite', 'RankingController@favorite')->name('ranking.favorite');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('shops', 'ShopsController', ['only' => ['create', 'show']]);
+    Route::post('favorite', 'UserFavoriterController@favorite')->name('userfavorite.favorite');
+    Route::delete('favorite', 'UserFavoriteController@unfavorite')->name('userfavorite.unfavorite');
+    Route::resource('users', 'UsersController', ['only' => ['show']]);
+});
