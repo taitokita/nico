@@ -25,17 +25,9 @@
                         {{ $count_favoriteings }}
                     </div>
                 </li>
-                <li>
-                    <div class="status-label">POST</div>
-                    <div id="favorite_count" class="status-value">
-                        {{ $count_favorite }}
-                    </div>
-                </li>
             </ul>
         </div>
     </div>
 </body>
-    @include('shops.shops',['shops' => $shops])
-    {!! $shops->render() !!}
 @endsection
 

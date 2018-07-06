@@ -37,3 +37,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
     Route::resource('shops', 'ShopsController');
 });
+
+//Route::get('/', 'ReviewsController@index');
+
+// omit
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+    Route::resource('reviews', 'ReviewsController', ['only' => ['store', 'destroy']]);
+});
