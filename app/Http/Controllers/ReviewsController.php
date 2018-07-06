@@ -15,19 +15,39 @@ class ReviewsController extends Controller
      */
     public function index()
     {
-        $data = [];
+         $data = [];
         if (\Auth::check()) {
             $user = \Auth::user();
-            $reviews = $user->reviews()->orderBy('created_at', 'desc')->paginate(10);
+            $reviews = $user->feed_reviews()->orderBy('created_at', 'desc')->paginate(10);
+
 
             $data = [
                 'user' => $user,
                 'reviews' => $reviews,
             ];
-            $data += $this->counts($user);
-            return view('users.show', $data);
-        }else {
-            return view('welcome');
         }
+        return view('welcome', $data);
+    }
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'content' => 'required|max:255',
+        ]);
+
+        $request->user()->reviews()->create([
+            'content' => $request->content,
+        ]);
+
+        return redirect('/');
+    }
+     public function destroy($id)
+    {
+        $review = \App\Review::find($id);
+
+        if (\Auth::user()->id === $review->user_id) {
+            $review->delete();
+        }
+
+        return redirect()->back();
     }
 }

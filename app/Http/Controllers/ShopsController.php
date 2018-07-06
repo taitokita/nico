@@ -8,12 +8,14 @@ use App\Http\Requests;
 
 use App\Shop; 
 
+use App\Review;
 
 class ShopsController extends Controller
 {
     public function index()
     {
-        $shops = Shop::all();
+        $shops = Shop::all(); 
+        $reviews = Review::all(); 
         $data = [];
         if (\Auth::check()) {
             $user = \Auth::user();
@@ -23,11 +25,13 @@ class ShopsController extends Controller
             $data = [
                 'user' => $user,
                 'shops' => $shops,
+                'reviews' => $reviews,
             ];
             //$data += $this->counts($user);
 
             return view('shops.index', [
             'shops' => $shops,
+            'reviews' =>$reviews,
             $data ]);
 
 
@@ -95,12 +99,15 @@ class ShopsController extends Controller
     {   
         $shop = Shop::find($id);
         $user = \Auth::user();
+        $review = Review::find($id);
         //$like_users = $shop->like_users;
 
         return view('shops.show', [
             'shop' => $shop,
             'user' => $user,
+            'review' => $review,
         ]);
+        
     }
 
     public function edit($id)
