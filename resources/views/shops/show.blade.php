@@ -15,7 +15,9 @@
         
     </div>
     <div id=balloon-5-top-left>
-            {{ $shop->content }}
+            <p>カテゴリー：{{ $shop->tag_id}}</p>
+            <p>コメント：{{ $shop->content }}</p>
+            <p>投稿日時：{{ $shop->created_at}}</p>
     </div>
   
     

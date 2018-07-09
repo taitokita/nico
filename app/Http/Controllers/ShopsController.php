@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\Shop; 
 
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Input;
 
 class ShopsController extends Controller
 {
@@ -58,6 +60,8 @@ class ShopsController extends Controller
             
             'name' => 'required|max:10', 
             'content' => 'required|max:191',
+            'tag_id' => 'required',
+
         ]);
 
 //        $filepath = $request->file('image')->store('public/items/photos');
@@ -66,6 +70,7 @@ class ShopsController extends Controller
         $shop->name = $request->name;
         $shop->content = $request->content;
         $shop->user_id = \Auth::user()->id;
+        $shop->tag_id = Input::get('tag_id');
         $shop->path = $filepath; 
         //$shop->type = 'like';
         //$shop->id =  $like['Shop']['shopId'];

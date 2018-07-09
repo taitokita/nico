@@ -14,6 +14,7 @@ class CreateShopsTable extends Migration
             $table->string('name');
             $table->string('content');
             $table->string('path');
+            $table->string('tag_id');
             $table->integer('user_id')->unsigned()->index();
             $table->timestamps();
         });

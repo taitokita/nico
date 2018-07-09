@@ -25,9 +25,17 @@
                         {{ $count_favoriteings }}
                     </div>
                 </li>
+                <li>
+                    <div class="status-label">POST</div>
+                    <div id="like_count" class="status-value">
+                        {{ $count_like }}
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
 </body>
+    @include('bijos.bijos',['bijos' => $bijos])
+    {!! $bijos->render() !!}
 @endsection
 
