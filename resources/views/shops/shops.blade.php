@@ -1,6 +1,6 @@
 @if ($shops)
     <div class="row">
-        @foreach ($shops as $shop)
+        @foreach ($shops as $key => $shop)
             <div class="shop">
                 <div class="col-md-3 col-sm-4 col-xs-12">
                     <div class="panel panel-default">
@@ -14,8 +14,28 @@
                                     @include('shops.favorite_button', ['shop' => $shop])
                                 @endif
                             </div>
+                            
+                            
+                              </div>
+                        @if (isset($shop->count))
+                            <div class="panel-footer">
+                                <p class="text-center">{{ $key+1 }}位: {{ $shop->count}} いいね</p>
+                            </div>
+                        @else (isset($shop->count))
+                            <div class="panel-footer">
+                                <p class="text-center">{{ $key+1 }}位: {{ $shop->count}} いいね</p>
+                            </div>
+                        @endif
+                    </div>
+                    
+                    
                 </div>
             </div>
         @endforeach
     </div>
 @endif
+
+
+
+
+
