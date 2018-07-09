@@ -16,5 +16,5 @@
 @endsection
 
 @section('content')
-    テスト
+   @include('shops.shops', ['shops' => $shops])
 @endsection
