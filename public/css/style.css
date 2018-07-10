@@ -386,15 +386,22 @@ footer {
 }
 
 /* bijo */
-.bijo .panel-body {
+.shop .panel-body {
     height: 70px;
 }
-.bijo .panel-heading {
+.shop .panel-heading {
     height: 250px;
 }
-.bijo .panel-heading img {
+.shop .panel-heading img {
     height: 100%;
     max-width: 100%;
+}
+p.shop-title {
+    /* Keep the number of lines in a sentence on two lines, and add "..." to the end of line. */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
 }
 
 #name1{

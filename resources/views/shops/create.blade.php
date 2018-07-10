@@ -28,8 +28,16 @@
             		<div class="">
             			<select name="tag_id" type="text" class="">
             				<option></option>
-            				<option value="1" name="イタリアン">イタリアン</option>
-            				<option value="2" name="フレンチ">フレンチ</option>
+            				<option value="1" name="1">和食</option>
+            				<option value="2" name="2">フレンチ</option>
+            				<option value="3" name="3">イタリアン</option>
+            				<option value="4" name="4">チャイニーズ</option>
+            				<option value="5" name="5">コリアン</option>
+            				<option value="6" name="6">スパニッシュ</option>
+            				<option value="7" name="7">インド</option>
+            				<option value="8" name="8">エスニック</option>
+            				<option value="9" name="9">居酒屋・Bar</option>
+            				<option value="10" name="10">Café</option>
             			</select>
             		</div>
             	</div>
@@ -42,7 +50,7 @@
                 
                 {!! Form::submit('投稿', ['class' => 'btn btn-primary lg']) !!}
         
-            {!! Form::close() !!}
+            　　{!! Form::close() !!}
             </div>
         </div>
     </div>

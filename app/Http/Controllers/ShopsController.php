@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Shop; 
+use App\Tag;
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
@@ -16,6 +17,16 @@ class ShopsController extends Controller
     public function index()
     {
         $shops = Shop::all();
+        $tags = Tag::All();
+        $tagLabel = '';
+        foreach ($tags as $tag){
+            foreach ($shops as $shop){
+            if($tag->id == $shop->tag_id) {
+                $name = $tag->name;
+                break;
+                }
+            }
+        }
         $data = [];
         if (\Auth::check()) {
             $user = \Auth::user();
@@ -30,33 +41,45 @@ class ShopsController extends Controller
 
             return view('shops.index', [
             'shops' => $shops,
+            'tags' =>$tags,
+            'tagslabel' =>$tagLabel,
             $data ]);
 
 
-        }else {
+        }
+        else {
             return view('welcome', [
             'shops' => $shops,
+            'tags' =>$tags,
+            'tagslabel' =>$tagLabel,
         ]);
     }
+    }  
         
-        
-    }
 
     public function create()
     {   
        
         $shop = new Shop;
-       
-       
+        $tags = Tag::All();
+        $tagLabel = '';
+        foreach ($tags as $tag) {
+            if($tag->id == $shop->tag_id) {
+                $name = $tag->name;
+                break;
+            }
+
         return view('shops.create', [
             'shop' => $shop,
+            'tags' => $tags
         ]);
+    }
     }
 
     public function store(Request $request)
     {
-               
-       $this->validate($request, [
+        
+        $this->validate($request, [
             
             'name' => 'required|max:20', 
             'content' => 'required|max:191',
@@ -72,25 +95,8 @@ class ShopsController extends Controller
         $shop->user_id = \Auth::user()->id;
         $shop->tag_id = Input::get('tag_id');
         $shop->path = $filepath; 
-        //$shop->type = 'like';
-        //$shop->id =  $like['Shop']['shopId'];
         $shop->save();
         
-        // $table->increments('id');
-        //     $table->timestamps();
-        //     $table->string('name');
-        //     $table->string('content');
-        //     $table->string('master');
-        //     $table->string('path');
-        //     //$table->string('id');
-        //     $table->string('name');
-        //     $table->string('type')->index();
-        //     $table->integer('user_id')->unsigned()->index();
-        
-//        $request->user()->shop()->create([
- //           'content' => $request->content,
-  //      ]);
-
 
         return redirect('shops');
 
@@ -100,11 +106,19 @@ class ShopsController extends Controller
     {   
         $shop = Shop::find($id);
         $user = \Auth::user();
-        //$like_users = $shop->like_users;
-
+        $tags = Tag::All();
+        $tagLabel = '';
+        foreach ($tags as $tag) {
+            if($tag->id == $shop->tag_id) {
+                $name = $tag->name;
+                break;
+            }
+        }
         return view('shops.show', [
             'shop' => $shop,
             'user' => $user,
+            'tags' =>$tags,
+            'tagslabel' =>$tagLabel
         ]);
     }
 
@@ -143,5 +157,20 @@ class ShopsController extends Controller
         }
         return redirect('/');
     }
+
+    // public function tagings($id)
+    // {
+    //     $shop = Shop::find($id);
+    //     $tagings = $shop->tagings()->paginate(10);
+
+    //     $data = [
+    //         'shop' => $shop,
+    //         'shops' => $tagings,
+    //     ];
+
+    //     $data += $this->counts($shop);
+
+    //     return view('shops.tagings', $data);
+    // }
 
 }

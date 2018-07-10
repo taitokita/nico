@@ -15,14 +15,23 @@
         
     </div>
     <div id=balloon-5-top-left>
-            <p>カテゴリー：{{ $shop->tag_id}}</p>
+        <?php
+        $tagLabel = '';
+        foreach ($tags as $tag) {
+            if($tag->id == $shop->tag_id) {
+                $name = $tag->name;
+                break;
+            }
+        }
+        ?>
+            <p>カテゴリー：{{ $name}}</p>
             <p>コメント：{{ $shop->content }}</p>
             <p>投稿日時：{{ $shop->created_at}}</p>
     </div>
   
     
     <div>
-            {!! link_to_route('shops.edit', 'このShopを編集', ['id' => $shop->id], ['class' => 'btn btn-default']) !!}
+            {!! link_to_route('shops.edit', 'この店舗を編集', ['id' => $shop->id], ['class' => 'btn btn-default']) !!}
         
         　　{!! Form::model($shop, ['route' => ['shops.destroy', $shop->id], 'method' => 'delete']) !!}
                 {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}

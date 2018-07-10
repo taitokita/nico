@@ -56,3 +56,15 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('favorite', 'UserFavoriteController@unfavorite')->name('userfavorite.unfavorite');
     Route::resource('users', 'UsersController', ['only' => ['show']]);
 });
+
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('shops', 'ShopsController', ['only' => ['index', 'show']]);
+    Route::group(['prefix' => 'shops/{id}'], function () {
+        Route::post('tag', 'ShopTagController@store')->name('shop.tag');
+        Route::delete('untag', 'ShopTagController@destroy')->name('shop.untag');
+        Route::get('tagings', 'ShopsController@tagings')->name('shops.tagings');
+    });
+
+    Route::resource('shops', 'ShopsController', ['only' => ['store', 'destroy']]);
+});

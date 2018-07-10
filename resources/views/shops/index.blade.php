@@ -23,7 +23,16 @@
                 @foreach ($shops as $shop)
                     <tr class = table2>
                         <td>{!! link_to_route('shops.show', $shop->id, ['id' => $shop->id]) !!}</td>
-                        <td>{{ $shop->tag_id}}</td>
+                            <?php
+                            $tagLabel = '';
+                            foreach ($tags as $tag) {
+                                if($tag->id == $shop->tag_id) {
+                                    $name = $tag->name;
+                                    break;
+                                }
+                            }
+                            ?>
+                        <td>{{ $name}}</td>
                         <td>{{ $shop->name }}</td>
                         <td>{{ $shop->content }}</td>
                         <td>{{ $shop->created_at}}</td>
@@ -32,5 +41,5 @@
             </tbody>
         </table>
     @endif
-    {!! link_to_route('shops.create', '出会いに行く', null, ['class' => 'btn btn-primary']) !!}
+    {!! link_to_route('shops.create', '店舗を投稿する', null, ['class' => 'btn btn-primary']) !!}
 @endsection

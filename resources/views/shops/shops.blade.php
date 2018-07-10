@@ -21,9 +21,13 @@
                             <div class="panel-footer">
                                 <p class="text-center">{{ $key+1 }}位: {{ $shop->count}} いいね</p>
                             </div>
-                        @else (isset($shop->count))
+                        @elseif (isset($shop->count))
                             <div class="panel-footer">
                                 <p class="text-center">{{ $key+1 }}位: {{ $shop->count}} いいね</p>
+                            </div>
+                        @else
+                            <div class="panel-footer">
+                                <p class="text-center">{{ $shop->content}}</p>
                             </div>
                         @endif
                     </div>
