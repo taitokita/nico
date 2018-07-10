@@ -58,7 +58,7 @@ class ShopsController extends Controller
                
        $this->validate($request, [
             
-            'name' => 'required|max:10', 
+            'name' => 'required|max:20', 
             'content' => 'required|max:191',
             'tag_id' => 'required',
 
@@ -120,7 +120,7 @@ class ShopsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required|max:10', 
+            'name' => 'required|max:20', 
             'content' => 'required|max:191',
         ]);
         

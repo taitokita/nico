@@ -29,7 +29,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background: url("/images/hanabatake.jpg") center center no-repeat;
+    background: url("/images/nico1.jpg") center center no-repeat;
     background-size: cover;
 }
 .cover .cover-inner {
@@ -68,7 +68,8 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background: url("/images/sora.jpg") center center no-repeat;
+    /* showの写真 */
+    background: url("/images/nico1.jpg") center center no-repeat;
     background-size: cover;
 }
 .cover1 .cover-inner {
@@ -182,7 +183,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background: url("/images/91639298_624.v1529123703.jpg") center center no-repeat;
+    background: url("/images/nico2.jpg") center center no-repeat;
     background-size: cover;
 }
 .cover2 .cover-inner {
@@ -215,7 +216,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background: url("/images/purple-flowers-in-the-forest-wallpaper-1.jpg") center center no-repeat;
+    background: url("/images/nico3.jpg") center center no-repeat;
     background-size: cover;
 }
 .cover3 .cover-inner {
@@ -248,7 +249,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background: url("/images/landscape-2837456_960_720.jpg") center center no-repeat;
+    background: url("/images/nico4.jpg") center center no-repeat;
     background-size: cover;
 }
 .cover4 .cover-inner {
@@ -281,7 +282,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background: url("/images/gettyimages-478240698-1521057897.jpg") center center no-repeat;
+    background: url("/images/nico8.jpg") center center no-repeat;
     background-size: cover;
 }
 .cover6 .cover-inner {
@@ -313,7 +314,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background: url("/images/91_zps83596a25.jpg") center center no-repeat;
+    background: url("/images/nico6.jpg") center center no-repeat;
     background-size: cover;
 }
 .cover10 .cover-inner {

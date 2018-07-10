@@ -4,7 +4,7 @@
     <div class="cover4">
         <div class="cover-inner">
             <div class="cover-contents">
-                 <h1>{{ $shop->name }} のプロフィール編集</h1>
+                 <h1>{{ $shop->name }} の概要編集</h1>
             </div>
         </div>
     </div>

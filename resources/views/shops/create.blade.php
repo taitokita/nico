@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="cover3">
+        <div class="cover-inner">
+            <div class="cover-contents">
+                <h1>店舗の投稿ページ</h1>
+            </div>
+        </div>
+    </div>
     <div class="search">
         <div class="row">
             <div class="text-center">
