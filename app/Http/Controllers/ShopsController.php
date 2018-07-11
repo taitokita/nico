@@ -159,7 +159,10 @@ class ShopsController extends Controller
     public function show($id)
     {   
         $shop = Shop::find($id);
-        $reviews = Review::orderBy('created_at', 'desc')->paginate(100);
+        $reviews = Review::orderBy('created_at', 'desc')
+        ->where('shop_id', $id)
+        ->paginate(100);
+        // select * from reviews where shop_id == $id orderby create_ad desc limit 100 offset 0
         $user = \Auth::user();
         $tags = Tag::All();
         $tagLabel = '';

@@ -38,6 +38,7 @@ class ReviewsController extends Controller
 
         $request->user()->reviews()->create([
             'content' => $request->content,
+            'shop_id' =>$request->shop_id,
         ]);
 
         return redirect()->back();

@@ -34,6 +34,7 @@
     
     <div class="form-group">
         {!! Form::open(['route' => 'reviews.store']) !!}
+        {!! Form::hidden('shop_id', $shop->id) !!}
         {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'rows' => '2']) !!}
         {!! Form::submit('Post', ['class' => 'btn btn-primary btn-block']) !!}
         {!! Form::close() !!}

@@ -13,6 +13,7 @@
                 <p>{!! nl2br(e($review->content)) !!}</p>
             </div>
             <div>
+                
                 @if (Auth::id() == $review->user_id)
                     {!! Form::model($review, ['route' => ['reviews.destroy', $review->id], 'method' => 'delete']) !!}
                         {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
