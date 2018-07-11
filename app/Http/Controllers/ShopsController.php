@@ -22,7 +22,7 @@ class ShopsController extends Controller
         $tags = Tag::All();
         $tagLabel = '';
         $searchResultWithShop = array();
-        $data = [];
+        
         
         foreach ($tags as $tag){
             foreach ($shops as $shop){
@@ -43,13 +43,13 @@ class ShopsController extends Controller
                 $searchResultWithShop =$ret;
             }
             foreach($ret as $r) {
-                // echo $r->name;
+                //echo $r->name;
             }
 //            return;
             
-        } 
+        }   
         
-        
+        $data = [];
         if (\Auth::check()) {
             $user = \Auth::user();
 
@@ -62,11 +62,12 @@ class ShopsController extends Controller
             //$data += $this->counts($user);
 
             return view('shops.index', [
-            'shops' => $shops,
+            //'shops' => $shops,
             'shops' => $searchResultWithShop,
-            'name' => "",
+            //'reviews' => $reviews,
             'tags' =>$tags,
-            'tagslabel' =>$tagLabel, 
+            'tagslabel' =>$tagLabel,
+            'name' => "",
             'search_result' =>  $searchResultWithShop,
             $data ]);
 
@@ -75,6 +76,7 @@ class ShopsController extends Controller
         else {
             return view('welcome', [
             'shops' => $shops,
+            //'reviews' => $reviews,
             'tags' =>$tags,
             'tagslabel' =>$tagLabel,
         ]);
@@ -111,6 +113,7 @@ class ShopsController extends Controller
     {   
        
         $shop = new Shop;
+        //$review = new Review;
         $tags = Tag::All();
         $tagLabel = '';
         foreach ($tags as $tag) {
@@ -121,6 +124,7 @@ class ShopsController extends Controller
 
         return view('shops.create', [
             'shop' => $shop,
+            //'review' => $review,
             'tags' => $tags
         ]);
     }
@@ -137,6 +141,7 @@ class ShopsController extends Controller
 
         ]);
 
+//        $filepath = $request->file('image')->store('public/items/photos');
         $filepath = $request->file('photo')->store('photo');
         $shop = new Shop;
         $shop->name = $request->name;
@@ -153,10 +158,8 @@ class ShopsController extends Controller
 
     public function show($id)
     {   
-       
         $shop = Shop::find($id);
         $reviews = Review::all();
-        //$reviews = Review::all()->orderBy('created_at', 'asc')->paginate(100);
         $user = \Auth::user();
         $tags = Tag::All();
         $tagLabel = '';

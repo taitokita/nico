@@ -15,20 +15,20 @@ class ReviewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function index()
-    // {
-    //     $data = [];
-    //     if (\Auth::check()) {
-    //         $user = \Auth::user();
-    //         $reviews = $user->feed_reviews()->orderBy('created_at', 'desc')->paginate(100);
+    public function index()
+    {
+        $data = [];
+        if (\Auth::check()) {
+            $user = \Auth::user();
+            $reviews = $user->feed_reviews()->orderBy('created_at', 'asc')->paginate(100);
 
-    //         $data = [
-    //             'user' => $user,
-    //             'reviews' => $reviews,
-    //         ];
-    //     }
-    //     return view('shops.show', $data);
-    // }
+            $data = [
+                'user' => $user,
+                'reviews' => $reviews,
+            ];
+        }
+        return view('shops.show', $data);
+    }
     
     public function store(Request $request)
     {

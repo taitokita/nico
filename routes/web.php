@@ -43,7 +43,7 @@ Route::group(['middleware' => 'auth'], function () {
 // omit
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+    Route::resource('reviews', 'ReviewsController', ['only' => ['index', 'show']]);
     Route::resource('reviews', 'ReviewsController', ['only' => ['store', 'destroy']]);
 });
 

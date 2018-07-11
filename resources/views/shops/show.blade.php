@@ -43,7 +43,7 @@
         @if (count($reviews) > 0)
                     @include('reviews.reviews', ['reviews' => $reviews])
         @endif
-    /div>    
+    </div>    
     
     <div>
             {!! link_to_route('shops.edit', 'この店舗を編集', ['id' => $shop->id], ['class' => 'btn btn-default']) !!}
