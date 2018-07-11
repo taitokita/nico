@@ -28,7 +28,22 @@
             <p>コメント：{{ $shop->content }}</p>
             <p>投稿日時：{{ $shop->created_at}}</p>
     </div>
-  
+            
+     @include('shops.favorite_button', ['shop' => $shop],['class' => 'btn'])
+    
+    
+    <div class="form-group">
+        {!! Form::open(['route' => 'reviews.store']) !!}
+        {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'rows' => '2']) !!}
+        {!! Form::submit('Post', ['class' => 'btn btn-primary btn-block']) !!}
+        {!! Form::close() !!}
+    </div>
+    
+    <div>
+        @if (count($reviews) > 0)
+                    @include('reviews.reviews', ['reviews' => $reviews])
+        @endif
+    /div>    
     
     <div>
             {!! link_to_route('shops.edit', 'この店舗を編集', ['id' => $shop->id], ['class' => 'btn btn-default']) !!}
@@ -36,9 +51,6 @@
         　　{!! Form::model($shop, ['route' => ['shops.destroy', $shop->id], 'method' => 'delete']) !!}
                 {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
             {!! Form::close() !!}
-            
-            @include('shops.favorite_button', ['shop' => $shop],['class' => 'btn'])
-
     </div>
 
 </body>

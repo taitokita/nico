@@ -18,17 +18,19 @@
                             
                               </div>
                         @if (isset($shop->count))
-                            <div class="panel-footer">
-                                <p class="text-center">{{ $key+1 }}位: {{ $shop->count}} いいね</p>
-                            </div>
-                        @elseif (isset($shop->count))
-                            <div class="panel-footer">
-                                <p class="text-center">{{ $key+1 }}位: {{ $shop->count}} いいね</p>
-                            </div>
-                        @else
-                            <div class="panel-footer">
-                                <p class="text-center">{{ $shop->content}}</p>
-                            </div>
+                            @if($shop->count!=$old)
+                                <div class="panel-footer">
+                                    <p class="text-center">{{ $key=$key+1}}位: {{ $old=$shop->count}} いいね</p>
+                                </div>
+                            @elseif (isset($shop->count))
+                                <div class="panel-footer">
+                                    <p class="text-center">{{ $key=$key}}位: {{ $old=$shop->count}} いいね</p>
+                                </div>
+                            @else
+                                <div class="panel-footer">
+                                    <p class="text-center">{{ $shop->content}}</p>
+                                </div>
+                            @endif
                         @endif
                     </div>
                     

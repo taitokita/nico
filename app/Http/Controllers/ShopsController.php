@@ -8,6 +8,7 @@ use App\Http\Requests;
 
 use App\Shop; 
 use App\Tag;
+use App\Review;
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
@@ -17,8 +18,12 @@ class ShopsController extends Controller
     public function index()
     {
         $shops = Shop::all();
+        $reviews = Review::all();
         $tags = Tag::All();
         $tagLabel = '';
+        $searchResultWithShop = array();
+        $data = [];
+        
         foreach ($tags as $tag){
             foreach ($shops as $shop){
             if($tag->id == $shop->tag_id) {
@@ -27,7 +32,24 @@ class ShopsController extends Controller
                 }
             }
         }
-        $data = [];
+        if($_GET['maction']??"" == "search"){
+            //
+            
+        
+            $ret = Shop::where('name', 'LIKE',"%".$_GET['name']."%")->get();
+            // var_dump($ret);
+            //return
+            if($ret != null) {
+                $searchResultWithShop =$ret;
+            }
+            foreach($ret as $r) {
+                // echo $r->name;
+            }
+//            return;
+            
+        } 
+        
+        
         if (\Auth::check()) {
             $user = \Auth::user();
 
@@ -41,8 +63,11 @@ class ShopsController extends Controller
 
             return view('shops.index', [
             'shops' => $shops,
+            'shops' => $searchResultWithShop,
+            'name' => "",
             'tags' =>$tags,
-            'tagslabel' =>$tagLabel,
+            'tagslabel' =>$tagLabel, 
+            'search_result' =>  $searchResultWithShop,
             $data ]);
 
 
@@ -53,6 +78,31 @@ class ShopsController extends Controller
             'tags' =>$tags,
             'tagslabel' =>$tagLabel,
         ]);
+        
+        
+        //値を取得
+        $name = Input::get('name');
+        $tag = Input::get('tag');
+
+        //query
+        $query = Shop::query();
+
+        //もしnameがあれば
+        if(!empty($name)){
+            $query->where('name','like','%'.$name.'%');
+        }
+
+        //もしemailがあれば
+        if(!empty($tag)){
+            $query->where('content','like','%'.$tag.'%');
+        }
+
+        //paginate
+        $shops = $query->paginate(10);
+
+        //値を返す
+        //name,emailを返す
+        return view('list')->with('shops',$shops)->with('name',$name)->with('tag',$tag);
     }
     }  
         
@@ -87,7 +137,6 @@ class ShopsController extends Controller
 
         ]);
 
-//        $filepath = $request->file('image')->store('public/items/photos');
         $filepath = $request->file('photo')->store('photo');
         $shop = new Shop;
         $shop->name = $request->name;
@@ -104,7 +153,10 @@ class ShopsController extends Controller
 
     public function show($id)
     {   
+       
         $shop = Shop::find($id);
+        $reviews = Review::all();
+        //$reviews = Review::all()->orderBy('created_at', 'asc')->paginate(100);
         $user = \Auth::user();
         $tags = Tag::All();
         $tagLabel = '';
@@ -116,6 +168,7 @@ class ShopsController extends Controller
         }
         return view('shops.show', [
             'shop' => $shop,
+            'reviews' => $reviews,
             'user' => $user,
             'tags' =>$tags,
             'tagslabel' =>$tagLabel
@@ -157,20 +210,4 @@ class ShopsController extends Controller
         }
         return redirect('/');
     }
-
-    // public function tagings($id)
-    // {
-    //     $shop = Shop::find($id);
-    //     $tagings = $shop->tagings()->paginate(10);
-
-    //     $data = [
-    //         'shop' => $shop,
-    //         'shops' => $tagings,
-    //     ];
-
-    //     $data += $this->counts($shop);
-
-    //     return view('shops.tagings', $data);
-    // }
-
 }

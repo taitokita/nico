@@ -4,10 +4,18 @@
     <div class="cover2">
         <div class="cover-inner">
             <div class="cover-contents">
-                 <h1>Nico<h1>
+                <h1>Nico index</h1>
+                <h1>{!! link_to_route('shops.create', '店舗を投稿する', null, ['class' => 'btn btn-primary']) !!}<h1>
             </div>
         </div>
     </div>
+    <form method="get" action="{{route('shops.index')}}">
+    <input type="text" name="name" class="form-control" placeholder="店を検索">
+    <!--<input type="text" name="email">-->
+    <input type="hidden" name="maction" value="search">
+    <input type="submit" value="検索" class="btn btn-info">
+    <input type="hidden" name="_token" value="{{csrf_token()}}">
+</form>
     @if (count($shops) > 0)
         <table class="table table-striped">
             <thead>
@@ -41,5 +49,4 @@
             </tbody>
         </table>
     @endif
-    {!! link_to_route('shops.create', '店舗を投稿する', null, ['class' => 'btn btn-primary']) !!}
 @endsection

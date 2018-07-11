@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
 
+use App\Review;
+
 class ReviewsController extends Controller
 {
     /**
@@ -13,21 +15,41 @@ class ReviewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $data = [];
-        if (\Auth::check()) {
-            $user = \Auth::user();
-            $reviews = $user->reviews()->orderBy('created_at', 'desc')->paginate(10);
+    // public function index()
+    // {
+    //     $data = [];
+    //     if (\Auth::check()) {
+    //         $user = \Auth::user();
+    //         $reviews = $user->feed_reviews()->orderBy('created_at', 'desc')->paginate(100);
 
-            $data = [
-                'user' => $user,
-                'reviews' => $reviews,
-            ];
-            $data += $this->counts($user);
-            return view('users.show', $data);
-        }else {
-            return view('welcome');
+    //         $data = [
+    //             'user' => $user,
+    //             'reviews' => $reviews,
+    //         ];
+    //     }
+    //     return view('shops.show', $data);
+    // }
+    
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'content' => 'required|max:191',
+        ]);
+
+        $request->user()->reviews()->create([
+            'content' => $request->content,
+        ]);
+
+        return redirect()->back();
+    }
+        
+        public function destroy($id)
+    {
+        $review = \App\Review::find($id);
+
+        if (\Auth::user()->id === $review->user_id) {
+            $review->delete();
         }
+        return redirect()->back();
     }
 }

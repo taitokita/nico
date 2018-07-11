@@ -14,7 +14,7 @@ class UsersController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        //$count_favorite = $user->favorite_shops()->count();
+        $reviews = $user->reviews()->orderBy('created_at', 'desc')->paginate(10);
          
         //  $shops = Shop::all();
          $shops = \DB::table('shops')
@@ -23,12 +23,11 @@ class UsersController extends Controller
                  ->where('user_favorite.user_id', $user->id)
                  ->distinct()
                  ->paginate(20);
-
         
         $data = [
-            'user' => $user,
             'shops' => $shops,
-            //'count_favorite' => $count_favorite,
+            'user' => $user,
+            'reviews' => $reviews,
             
         ];
         $data += $this->counts($user);

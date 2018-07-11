@@ -13,6 +13,23 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::check())
+                    　　<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
+                                店を検索
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <form method="get" action="{{route('shops.index')}}">
+                                <input type="text" name="name" class="form-control" placeholder="キーワードを入力">
+                                <!--<input type="text" name="email">-->
+                                <input type="hidden" name="maction" value="search">
+                                <input type="submit" value="店を検索" class="btn btn-success">
+                                <input type="hidden" name="_token" value="{{csrf_token()}}">
+                            </form>
+                                
+                            </ul>
+                        </li>
                         <li>
                             <a href="{{ route('shops.create') }}">
                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>

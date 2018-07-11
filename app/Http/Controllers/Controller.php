@@ -14,10 +14,13 @@ class Controller extends BaseController
     public function counts($user) {
         $count_favoriteings = $user->favoriteings()->count();
         $count_shops = $user->shops()->count();
+        $count_reviews = $user->reviews()->count();
 
         return [
             'count_favoriteings' => $count_favoriteings,
             'count_shops' => $count_shops,
+            'count_reviews' => $count_reviews,
+            
         ];
     }
 }
