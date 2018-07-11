@@ -15,7 +15,7 @@
                     @if (Auth::check())
                     　　<li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                                 店を検索
                                 <span class="caret"></span>
                             </a>
