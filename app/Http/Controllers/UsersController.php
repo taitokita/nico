@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 
 use App\User;
 use App\Shop;
+use App\Tag;
 
 class UsersController extends Controller
 {
@@ -23,11 +24,20 @@ class UsersController extends Controller
                  ->where('user_favorite.user_id', $user->id)
                  ->distinct()
                  ->paginate(20);
+        $shops1 = \DB::table('shops')
+                 ->join('reviews', 'shops.id', '=', 'reviews.shop_id')
+                 ->select('shops.*')
+                 ->where('reviews.user_id', $user->id)
+                 ->distinct()
+                 ->paginate(20);
+        $tags = Tag::All();
         
         $data = [
             'shops' => $shops,
+            'shops1' => $shops1,
             'user' => $user,
             'reviews' => $reviews,
+            'tags' => $tags,
             
         ];
         $data += $this->counts($user);
@@ -58,10 +68,12 @@ class UsersController extends Controller
         $count_shops = $user->shops()->count();
         
         $count_favoriteings = $user->favoriteings()->count();
+        $count_reviews = $user->reviews()->count();
 
         return [
             'count_shops' => $count_shops,
             'count_favoriteings' => $count_favoriteings,
+            'count_reviews' => $count_reviews,
         ];
     }
 }

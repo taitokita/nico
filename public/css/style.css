@@ -13,8 +13,8 @@ footer {
     background-color: #fff;
 }
 .navbar-header img {
-    margin-top: 5px;
-    height: 40px;
+    margin-top: 15px;
+    height: 50px;
 }
 #imageshowflame{
     
@@ -337,6 +337,36 @@ footer {
     text-shadow: 5px 5px 1px #999999;
 
 }
+
+.cover11 {
+    margin-top: -20px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 300px;
+    background: url("/images/nico7.jpg") center center no-repeat;
+    background-size: cover;
+}
+.cover11 .cover-inner {
+    height: 100%;
+    margin: auto;
+    display: table;
+}
+.cover11 .cover-inner .cover-contents {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+}
+.cover11 .cover-inner .cover-contents h1 {
+    margin: 0 0 20px 0;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    font-family: 'Caveat', cursive;
+    text-shadow: 5px 5px 1px #999999;
+
+}
+
 .cover .btn-success {
     background-color: #ed486f;
     border-color: #ed486f;
@@ -387,7 +417,7 @@ footer {
 
 /* bijo */
 .shop .panel-body {
-    height: 70px;
+    height:　120px;
 }
 .shop .panel-heading {
     height: 250px;
@@ -410,39 +440,20 @@ p.shop-title {
     float:left;
     font-family: 'Indie Flower', cursive;
 }
-.panel-default{
-    border: 2px dotted #EAA8BF;
-    position: relative;
-}
-.panel-default:before{
-    content: '＊';
-    color: #fff;
-    font-size: 50px;
-    font-weight: bold; 
-    position: absolute;
-    top: -38px;
-    left: -25px;
-    transform: rotate(20deg);
-    -moz-transform: rotate(20deg);
-    -webkit-transform: rotate(20deg); 
-    -o-transform: rotate(20deg);
-    text-shadow:  0 0 8px #eaa8bf, 0 0 6px #eaa8bf, 0 0 4px #eaa8bf, 0 0 2px #eaa8bf, 0 0 0.5px #eaa8bf;
-}
-.panel-default:after{
-    content: '*';
-    color: #fff;
-    font-size: 50px;
-    font-weight: bold; 
-    position: absolute;
-    bottom: -45px;
-    right: -15px;
-    transform: rotate(20deg);
-    -moz-transform: rotate(20deg);
-    -webkit-transform: rotate(20deg); 
-    -o-transform: rotate(20deg);
-    text-shadow:  0 0 8px #eaa8bf, 0 0 6px #eaa8bf, 0 0 4px #eaa8bf, 0 0 2px #eaa8bf, 0 0 0.5px #eaa8bf;
-}
 
+/*flame*/
+.panel-default{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+.panel-default p {
+    margin: 0; 
+    padding: 0;
+}
 
 #balloon-5-top-left {
 	position: relative;

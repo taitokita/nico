@@ -124,7 +124,6 @@ class ShopsController extends Controller
 
         return view('shops.create', [
             'shop' => $shop,
-            //'review' => $review,
             'tags' => $tags
         ]);
     }
@@ -152,20 +151,20 @@ class ShopsController extends Controller
         $shop->save();
         
 
-        return redirect('shops');
+        return redirect('/');
 
     }
 
     public function show($id)
     {   
         $shop = Shop::find($id);
-        $reviews = Review::orderBy('created_at', 'desc')
-        ->where('shop_id', $id)
-        ->paginate(100);
+        $reviews = Review::orderBy('created_at', 'desc')->where('shop_id', $id)->paginate(100);
         // select * from reviews where shop_id == $id orderby create_ad desc limit 100 offset 0
         $user = \Auth::user();
         $tags = Tag::All();
         $tagLabel = '';
+       
+        
         foreach ($tags as $tag) {
             if($tag->id == $shop->tag_id) {
                 $name = $tag->name;
@@ -178,7 +177,8 @@ class ShopsController extends Controller
             'reviews' => $reviews,
             'user' => $user,
             'tags' =>$tags,
-            'tagslabel' =>$tagLabel
+            'tagslabel' =>$tagLabel,
+           
         ]);
     }
 

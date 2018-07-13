@@ -40,17 +40,16 @@ Route::group(['middleware' => 'auth'], function () {
 
 //Route::get('/', 'ReviewsController@index');
 
-// omit
-
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('reviews', 'ReviewsController', ['only' => ['index', 'show']]);
     Route::resource('reviews', 'ReviewsController', ['only' => ['store', 'destroy']]);
 });
 
-//Route::resource('reviews', 'ReviewsController');
 
 // Ranking
 Route::get('ranking/favorite', 'RankingController@favorite')->name('ranking.favorite');
+Route::get('ranking/review', 'RankingController@review')->name('ranking.review');
+
 
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('shops', 'ShopsController', ['only' => ['create', 'show']]);

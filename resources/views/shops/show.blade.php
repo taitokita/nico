@@ -25,7 +25,7 @@
         }
         ?>
             <p>カテゴリー：{{ $name}}</p>
-            <p>コメント：{{ $shop->content }}</p>
+            <p>詳細：{{ $shop->content }}</p>
             <p>投稿日時：{{ $shop->created_at}}</p>
     </div>
             
@@ -47,11 +47,13 @@
     </div>    
     
     <div>
+        @if (Auth::id() == $shop->user_id)
             {!! link_to_route('shops.edit', 'この店舗を編集', ['id' => $shop->id], ['class' => 'btn btn-default']) !!}
         
         　　{!! Form::model($shop, ['route' => ['shops.destroy', $shop->id], 'method' => 'delete']) !!}
-                {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
+                {!! Form::submit('この店舗を削除', ['class' => 'btn btn-danger']) !!}
             {!! Form::close() !!}
+        @endif
     </div>
 
 </body>

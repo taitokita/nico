@@ -15,12 +15,12 @@
             
                 <div class="form-group">
                     {!! Form::label('name', 'Shop名:') !!}
-                    {!! Form::text('name', null, ['class' => 'form-control input-lg', 'placeholder' => 'Bijo名を入力', 'size' => 40]) !!}
+                    {!! Form::text('name', null, ['class' => 'form-control input-lg', 'placeholder' => '店舗名を入力', 'size' => 40]) !!}
                 </div>
                     
                 <div class="form-group">
                     {!! Form::label('content', 'content:') !!}
-                    {!! Form::text('content', null, ['class' => 'form-control input-lg', 'placeholder' => 'profileを入力', 'size' => 40]) !!}
+                    {!! Form::text('content', null, ['class' => 'form-control input-lg', 'placeholder' => 'コメントを入力', 'size' => 40]) !!}
                 </div>
                 
                 <div class="form-group">

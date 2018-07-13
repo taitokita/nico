@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
 
-use App\Shops;
+use App\Shop;
+use App\Tag;
+use App\Review;
 
 class RankingController extends Controller
 {
@@ -21,7 +23,7 @@ class RankingController extends Controller
             , \DB::raw('shops.id as id')
             , \DB::raw('COUNT(*) as count'))
         ->groupBy('shops.id','user_favorite.favorite_id')
-        ->orderBy('count', 'DESC')->take(10)->get();
+        ->orderBy('count', 'DESC')->take(50)->get();
         $old = 0;
         $rank = 0;
     
@@ -31,4 +33,30 @@ class RankingController extends Controller
             'rank' => $rank
         ]);
     }
+    
+    public function review()
+    {
+        
+        $shops = \DB::table('reviews')
+        ->join('shops', 'reviews.shop_id', '=', 'shops.id')
+        ->select (min('path','name','shop_id')
+            , \DB::raw('min(path) as path')
+            , \DB::raw('min(name) as name')
+            , \DB::raw('min(shop_id) as shop_id')
+            , \DB::raw('shops.id as id')
+            , \DB::raw('COUNT(*) as count'))
+        ->groupBy('shops.id','reviews.shop_id','shops.name')
+        ->orderBy('count', 'DESC')->take(50)->get();
+        
+        $old = 0;
+        $rank = 0;
+
+        return view('ranking.review', [
+            'shops' => $shops,
+            'old' => $old,
+            'rank' => $rank,
+        ]);
+
+    }
+    
 }

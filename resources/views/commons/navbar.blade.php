@@ -33,7 +33,7 @@
                         <li>
                             <a href="{{ route('shops.create') }}">
                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                ショップを追加
+                                店舗を投稿する
                               </a>
                         </li>
 
@@ -45,6 +45,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('ranking.favorite') }}">Favoriteランキング</a></li>
+                                 <li><a href="{{ route('ranking.review') }}">Reviewランキング</a></li>
                             </ul>
                         </li>
 

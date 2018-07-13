@@ -12,4 +12,6 @@ class Shop extends Model
     {
         return $this->belongsToMany(User::class)->withPivot('type')->withTimestamps();
     }
+    
+    
 }

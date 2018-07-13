@@ -13,12 +13,12 @@
          <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
             {!! Form::model($shop, ['route' => ['shops.update', $shop->id], 'method' => 'put', 'enctype'=>'multipart/form-data']) !!}
                 <div class="form-group">
-                    {!! Form::label('name', '女の子名:') !!}
+                    {!! Form::label('name', '店舗名:') !!}
                     {!! Form::text('name', null, ['class' => 'form-control']) !!}
                 </div>
         
                 <div class="form-group">
-                    {!! Form::label('content', 'プロフィール:') !!}
+                    {!! Form::label('content', '詳細') !!}
                     {!! Form::text('content', null, ['class' => 'form-control']) !!}
                 </div>
                 
