@@ -14,13 +14,13 @@
                     {!! Form::model($shop, ['route' => 'shops.store', 'enctype'=>'multipart/form-data']) !!}
             
                 <div class="form-group">
-                    {!! Form::label('name', 'Shop名:') !!}
-                    {!! Form::text('name', null, ['class' => 'form-control input-lg', 'placeholder' => '店舗名を入力', 'size' => 40]) !!}
+                    {!! Form::label('name', 'Shop name:') !!}
+                    {!! Form::text('name', null, ['class' => 'form-control input-lg', 'placeholder' => 'Input Shop name', 'size' => 40]) !!}
                 </div>
                     
                 <div class="form-group">
                     {!! Form::label('content', 'content:') !!}
-                    {!! Form::text('content', null, ['class' => 'form-control input-lg', 'placeholder' => 'コメントを入力', 'size' => 40]) !!}
+                    {!! Form::text('content', null, ['class' => 'form-control input-lg', 'placeholder' => 'Input coment', 'size' => 40]) !!}
                 </div>
                 
                 <div class="form-group">
@@ -45,7 +45,7 @@
                 
                 <div class="form-group">
                     <label for="photo">画像ファイル:</label>
-                    {!! Form::file('photo') !!}
+                    {!! Form::file('photo[]', ["multiple"]) !!}
                 </div>
                 
                 {!! Form::submit('投稿', ['class' => 'btn btn-primary lg']) !!}

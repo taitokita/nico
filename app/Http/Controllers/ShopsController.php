@@ -33,20 +33,14 @@ class ShopsController extends Controller
             }
         }
         if($_GET['maction']??"" == "search"){
-            //
             
         
             $ret = Shop::where('name', 'LIKE',"%".$_GET['name']."%")->get();
-            // var_dump($ret);
-            //return
             if($ret != null) {
                 $searchResultWithShop =$ret;
             }
             foreach($ret as $r) {
-                //echo $r->name;
             }
-//            return;
-            
         }   
         
         $data = [];
@@ -59,12 +53,9 @@ class ShopsController extends Controller
                 'user' => $user,
                 'shops' => $shops,
             ];
-            //$data += $this->counts($user);
 
             return view('shops.index', [
-            //'shops' => $shops,
             'shops' => $searchResultWithShop,
-            //'reviews' => $reviews,
             'tags' =>$tags,
             'tagslabel' =>$tagLabel,
             'name' => "",
@@ -76,7 +67,6 @@ class ShopsController extends Controller
         else {
             return view('welcome', [
             'shops' => $shops,
-            //'reviews' => $reviews,
             'tags' =>$tags,
             'tagslabel' =>$tagLabel,
         ]);
@@ -113,7 +103,6 @@ class ShopsController extends Controller
     {   
        
         $shop = new Shop;
-        //$review = new Review;
         $tags = Tag::All();
         $tagLabel = '';
         foreach ($tags as $tag) {
@@ -139,8 +128,18 @@ class ShopsController extends Controller
             'tag_id' => 'required',
 
         ]);
-
-//        $filepath = $request->file('image')->store('public/items/photos');
+        
+        foreach((array)$request->file('photo') as $gyu){
+         $gyu->store('photo');
+        }
+       if($request->file('photo')!=null){
+           foreach ($request->file('photo') as $photo) {
+              $filepath = $photo->store('photo');
+            }
+       }
+       else {
+        $filepath ='';
+        }
         $filepath = $request->file('photo')->store('photo');
         $shop = new Shop;
         $shop->name = $request->name;
@@ -159,7 +158,6 @@ class ShopsController extends Controller
     {   
         $shop = Shop::find($id);
         $reviews = Review::orderBy('created_at', 'desc')->where('shop_id', $id)->paginate(100);
-        // select * from reviews where shop_id == $id orderby create_ad desc limit 100 offset 0
         $user = \Auth::user();
         $tags = Tag::All();
         $tagLabel = '';

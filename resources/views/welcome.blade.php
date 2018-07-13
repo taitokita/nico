@@ -5,7 +5,7 @@
         <div class="cover-inner">
             <div class="cover-contents">
                 <h1>Nico</h1>
-                <h1>終業後の時間をデザインする</h1>
+                <h1>Design, the Time after work.</h1>
                 @if (!Auth::check())
                     <a href="{{ route('signup.get') }}" class="btn btn-info btn-lg">Sign up</a>
                     <a href="{{ route('login') }}"class="btn btn-success btn-lg">Log in</a>

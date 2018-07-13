@@ -10,6 +10,12 @@
                         
                         <div class="panel-body">
                             <h3 id="name1" class="shop-title">{!! link_to_route('shops.show', $shop->name, ['name' => $shop->id]) !!}</h>
+                        <br>
+                        <div id="bottonshop" class="shop-favorite" class="buttons text-center ">
+                                @if (Auth::check())
+                                    @include('shops.favorite_button', ['shop' => $shop])
+                                @endif
+                        </div>
                         </div>
                         
                         @if (isset($shop->count))
@@ -38,11 +44,7 @@
                             <div class="panel-footer">
                                 <p class="text-center">{{$name}}</p>
                             </div>
-                            <div id="botton"  class="buttons text-center ">
-                                @if (Auth::check())
-                                    @include('shops.favorite_button', ['shop' => $shop])
-                                @endif
-                            </div>
+                            
                         @endif
                     </div>
                 </div>

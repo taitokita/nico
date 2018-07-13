@@ -373,16 +373,6 @@ footer {
 }
 
 
-
-/* bijo */
-.bijo .panel-body {
-    height: 120px;
-}
-.bijo .buttons form {
-    display: inline-block;
-    margin: 0 5px;
-}
-
 /* users */
 .user-profile .name {
     margin-bottom: 20px;
@@ -415,7 +405,10 @@ footer {
     font-size: 18px;
 }
 
-/* bijo */
+
+
+
+/* shop */
 .shop .panel-body {
     height:　120px;
 }
@@ -426,19 +419,20 @@ footer {
     height: 100%;
     max-width: 100%;
 }
-p.shop-title {
+.shop-title {
     /* Keep the number of lines in a sentence on two lines, and add "..." to the end of line. */
+    font-size: 30px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     overflow: hidden;
-}
-
-#name1{
-    font-size:30px;
-    margin-top:0px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     float:left;
     font-family: 'Indie Flower', cursive;
+}
+.shop-favorite{
+    
 }
 
 /*flame*/
@@ -502,4 +496,5 @@ p.shop-title {
 
 .panel-footer{
     font-size: large;
+    font-family: 'Indie Flower', cursive;
 }
