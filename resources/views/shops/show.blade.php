@@ -10,23 +10,32 @@
         </div>
     </div>
 <body>
-    <div class=imageshowflame>
-        <p><img id=imageshow src="{{asset('item/'.$shop->path) }}"></p>
-        
-    </div>
-    <div id=balloon-5-top-left>
-        <?php
-        $tagLabel = '';
-        foreach ($tags as $tag) {
-            if($tag->id == $shop->tag_id) {
-                $name = $tag->name;
-                break;
-            }
-        }
-        ?>
-            <p>カテゴリー：{{ $name}}</p>
-            <p>詳細：{{ $shop->content }}</p>
-            <p>投稿日時：{{ $shop->created_at}}</p>
+     <div class=imageshowflame>
+       @if(empty($shop->path))
+       <p><img id=imageshow src="{{asset('item/photo/dummy.jpg') }}"></p>
+       @else
+       
+       @endif
+       @foreach($images as $image)
+       <div style='display:inline-block;'><img id=imageshow src="{{asset('item/'.$image->url) }}"></div>
+       @endforeach
+   </div>
+   
+   <div class='showcontents'>
+       <?php
+       $tagLabel = '';
+       foreach ($tags as $tag) {
+           if($tag->id == $shop->tag_id) {
+               $name = $tag->name;
+               break;
+           }
+       }
+       ?>
+            <p>Name : {{ $shop->name }}</p>    
+            <p>Category : {{ $name}}</p>
+            <p>Coment : {{ $shop->content }}</p>
+            <p>Location : </p>
+            <p>Post time : {{ $shop->created_at}}</p>
     </div>
             
      @include('shops.favorite_button', ['shop' => $shop],['class' => 'btn'])
@@ -48,14 +57,13 @@
     
     <div>
         @if (Auth::id() == $shop->user_id)
-            {!! link_to_route('shops.edit', 'この店舗を編集', ['id' => $shop->id], ['class' => 'btn btn-default']) !!}
+            {!! link_to_route('shops.edit', 'edit this page', ['id' => $shop->id], ['class' => 'btn btn-default']) !!}
         
         　　{!! Form::model($shop, ['route' => ['shops.destroy', $shop->id], 'method' => 'delete']) !!}
-                {!! Form::submit('この店舗を削除', ['class' => 'btn btn-danger']) !!}
+                {!! Form::submit('delete this page', ['class' => 'btn btn-danger']) !!}
             {!! Form::close() !!}
         @endif
     </div>
-
 </body>
 @endsection
 

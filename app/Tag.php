@@ -45,23 +45,7 @@ public function untag($shopId)
     }
 }
 
-
 public function is_taging($shopId) {
     return $this->tagings()->where('tag_id', $shopId)->exists();
 }
-
-
-// static function toHashmap() {
-//      $tags = Tag::all();
-//      $h = array();
-//         foreach ($tags as $tag) {
-//             if($tag->id == $shop->tag_id) {
-//                 $name = $tag->name;
-//                 break;
-//                 $h[$id] = $name;
-//             }
-//         }
-//             return $h;
-//     Tag::toHashmap(); 
-//     }
 }

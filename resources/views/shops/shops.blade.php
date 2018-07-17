@@ -9,7 +9,7 @@
                         </div>
                         
                         <div class="panel-body">
-                            <h3 id="name1" class="shop-title">{!! link_to_route('shops.show', $shop->name, ['name' => $shop->id]) !!}</h>
+                            <h3 class="shop-title">{!! link_to_route('shops.show', $shop->name, ['name' => $shop->id]) !!}</h>
                         <br>
                         <div id="bottonshop" class="shop-favorite" class="buttons text-center ">
                                 @if (Auth::check())

@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Shop;
 use App\Tag;
+use App\Review;
+use App\Image;
 
 class UsersController extends Controller
 {
@@ -17,7 +19,6 @@ class UsersController extends Controller
         $user = User::find($id);
         $reviews = $user->reviews()->orderBy('created_at', 'desc')->paginate(10);
          
-        //  $shops = Shop::all();
          $shops = \DB::table('shops')
                  ->join('user_favorite', 'shops.id', '=', 'user_favorite.favorite_id')
                  ->select('shops.*')

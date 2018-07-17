@@ -4,7 +4,7 @@
     <div class="cover3">
         <div class="cover-inner">
             <div class="cover-contents">
-                <h1>店舗の投稿ページ</h1>
+                <h1>Shop posting page</h1>
             </div>
         </div>
     </div>
@@ -24,19 +24,19 @@
                 </div>
                 
                 <div class="form-group">
-            		<label for="tag_id" class="">カテゴリー</label>
+            		<label for="tag_id" class="">Category</label>
             		<div class="">
             			<select name="tag_id" type="text" class="">
             				<option></option>
-            				<option value="1" name="1">和食</option>
-            				<option value="2" name="2">フレンチ</option>
-            				<option value="3" name="3">イタリアン</option>
-            				<option value="4" name="4">チャイニーズ</option>
-            				<option value="5" name="5">コリアン</option>
-            				<option value="6" name="6">スパニッシュ</option>
-            				<option value="7" name="7">インド</option>
-            				<option value="8" name="8">エスニック</option>
-            				<option value="9" name="9">居酒屋・Bar</option>
+            				<option value="1" name="1">Japanese</option>
+            				<option value="2" name="2">French</option>
+            				<option value="3" name="3">Itarian</option>
+            				<option value="4" name="4">Chinese</option>
+            				<option value="5" name="5">Korean</option>
+            				<option value="6" name="6">Spanish</option>
+            				<option value="7" name="7">Indian</option>
+            				<option value="8" name="8">Ethnic</option>
+            				<option value="9" name="9">Izakaya・Bar</option>
             				<option value="10" name="10">Café</option>
             			</select>
             		</div>
@@ -44,11 +44,11 @@
 
                 
                 <div class="form-group">
-                    <label for="photo">画像ファイル:</label>
+                    <label for="photo">Picture file:</label>
                     {!! Form::file('photo[]', ["multiple"]) !!}
                 </div>
                 
-                {!! Form::submit('投稿', ['class' => 'btn btn-primary lg']) !!}
+                {!! Form::submit('Post', ['class' => 'btn btn-primary lg']) !!}
         
             　　{!! Form::close() !!}
             </div>

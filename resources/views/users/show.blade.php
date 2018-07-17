@@ -21,13 +21,13 @@
                 
                 <li>
                     <div class="status-label">favorite</div>
-                    <div id="post_count" class="status-value">
+                    <div class="post_count" class="status-value">
                         {{ $count_favoriteings }}
                     </div>
                 </li>
                  <li>
                     <div class="status-label">review</div>
-                    <div id="post_count" class="status-value">
+                    <div class="post_count" class="status-value">
                         {{ $count_reviews }}
                     </div>
                 </li>
@@ -35,11 +35,24 @@
         </div>
     </div>
 </body>
-<div class="title-favorite">favorite</div>
-    @include('shops.shops',['shops' => $shops])
-    {!! $shops->render() !!}
-<div class="title-review">review</div>
-    @include('shops.shops1',['shops' => $shops1])
-    {!! $shops->render() !!}
+<div class="hidden_box">
+    <label for="label1" class="glyphicon glyphicon-circle-arrow-down"> favorite</label>
+    <input type="checkbox" id="label1"/>
+    <div class="hidden_show">
+      <!--非表示ここから-->     
+      	@include('shops.shops',['shops' => $shops])
+        {!! $shops->render() !!}
+      <!--ここまで-->
+    </div>
+</div>
+<div class="hidden_box">
+    <label for="label2" class="glyphicon glyphicon-circle-arrow-down"> review</label>
+    <input type="checkbox" id="label2"/>
+    <div class="hidden_show">
+      <!--非表示ここから-->     
+      	@include('shops.shops1',['shops' => $shops1])
+        {!! $shops->render() !!}
+      <!--ここまで-->
+    </div>
+</div>
 @endsection
-

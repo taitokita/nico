@@ -16,39 +16,100 @@
                     　　<li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                                店を検索
+                                Search
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <form method="get" action="{{route('shops.index')}}">
-                                <input type="text" name="name" class="form-control" placeholder="キーワードを入力">
-                                <!--<input type="text" name="email">-->
+                                <input type="text" name="name" class="form-control" placeholder="keyword">
                                 <input type="hidden" name="maction" value="search">
-                                <input type="submit" value="店を検索" class="btn btn-success">
+                                <input type="submit" value="Search" class="btn btn-secondery">
                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                             </form>
                                 
                             </ul>
+                            
                         </li>
-                        <li>
-                            <a href="{{ route('shops.create') }}">
-                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                店舗を投稿する
-                              </a>
+                 <li class="dropdown">                            
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+                            Category                                
+                            <span class="caret"></span>                   
+                    </a>
+                    <ul class="dropdown-menu">
+                               <li>
+                                   <form method="get" action="{{route('shops.index')}}">
+                                      <input type="hidden" name="maction" value="1">
+                                      <input type="submit" value="Japanese" class="btn btn-link">
+                                  </form>
+                              </li>
+                               <li> <form method="get" action="{{route('shops.index')}}">
+                                      <input type="hidden" name="maction" value="2">
+                                      <input type="submit" value="French" class="btn btn-link">
+                                  </form>
+                              </li>
+                               <li><form method="get" action="{{route('shops.index')}}">
+                                      <input type="hidden" name="maction" value="3">
+                                      <input type="submit" value="Itarian" class="btn btn-link">
+                                  </form>
+                              </li>
+                               <li><form method="get" action="{{route('shops.index')}}">
+                                      <input type="hidden" name="maction" value="4">
+                                      <input type="submit" value="Chinese" class="btn btn-link">
+                                  </form>
+                              </li>
+                               <li><form method="get" action="{{route('shops.index')}}">
+                                      <input type="hidden" name="maction" value="5">
+                                      <input type="submit" value="Korean" class="btn btn-link">
+                                  </form>
+                              </li>
+                               <li><form method="get" action="{{route('shops.index')}}">
+                                      <input type="hidden" name="maction" value="6">
+                                      <input type="submit" value="Spanish" class="btn btn-link">
+                                  </form>
+                              </li>
+                               <li><form method="get" action="{{route('shops.index')}}">
+                                      <input type="hidden" name="maction" value="7">
+                                      <input type="submit" value="Indian" class="btn btn-link">
+                                  </form>
+                              </li>
+                               <li><form method="get" action="{{route('shops.index')}}">
+                                      <input type="hidden" name="maction" value="8">
+                                      <input type="submit" value="Ethnic" class="btn btn-link">
+                                  </form>
+                              </li>
+                               <li><form method="get" action="{{route('shops.index')}}">
+                                      <input type="hidden" name="maction" value="9">
+                                      <input type="submit" value="Izakaya・Bar" class="btn btn-link">
+                                  </form>
+                              </li>
+                               <li><form method="get" action="{{route('shops.index')}}">
+                                      <input type="hidden" name="maction" value="10">
+                                      <input type="submit" value=" Café" class="btn btn-link">
+                                  </form>
+                              </li>
+                          </ul>
                         </li>
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 <span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
-                                ランキング
+                                Ranking
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="{{ route('ranking.favorite') }}">Favoriteランキング</a></li>
-                                 <li><a href="{{ route('ranking.review') }}">Reviewランキング</a></li>
+                                <li><a href="{{ route('ranking.favorite') }}">Favorite Ranking</a></li>
+                                 <li><a href="{{ route('ranking.review') }}">Review Ranking</a></li>
                             </ul>
                         </li>
-
+                        
+                        <li class=dropdown-toggle>
+                            <a href="{{ route('shops.create') }}">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                New Shop
+                              </a>
+                        </li>
+                        
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 <span class="gravatar">
@@ -59,17 +120,17 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="{{ route('users.show', Auth::id()) }}">マイページ</a>
+                                    <a href="{{ route('users.show', Auth::id()) }}">My Page</a>
                                 </li>
                                 <li role="separator" class="divider"></li>
                                 <li>
-                                    <a href="{{ route('logout.get') }}">ログアウト</a>
+                                    <a href="{{ route('logout.get') }}">Log Out</a>
                                 </li>
                             </ul>
                         </li>
                     @else
-                        <li><a href="{{ route('signup.get') }}">新規登録</a></li>
-                        <li><a href="{{ route('login') }}">ログイン</a></li>
+                        <li><a href="{{ route('signup.get') }}">Sign up</a></li>
+                        <li><a href="{{ route('login') }}">Login</a></li>
                     @endif
                 </ul>
             </div>

@@ -13,31 +13,31 @@ class TagTableSeeder extends Seeder
     {
         DB::table('tags')->insert([
             [
-            'name' => '和食',
+            'name' => 'Japanese',
             ],
             [
-            'name' => 'フレンチ',
+            'name' => 'French',
             ],
             [
-            'name' => 'イタリアン',
+            'name' => 'Itarian',
             ],
             [
-            'name' => 'チャイニーズ',
+            'name' => 'Chinese',
             ],
             [
-            'name' => 'コリアン',
+            'name' => 'Korean',
             ],
             [
-            'name' => 'スパニッシュ',
+            'name' => 'spanish',
             ],
             [
-            'name' => 'インド',
+            'name' => 'Indian',
             ],
             [
-            'name' => 'エスニック',
+            'name' => 'Ethnic',
             ],
             [
-            'name' => '居酒屋・Bar',
+            'name' => 'Izakaya・Bar',
             ],
             [
             'name' => 'Café',

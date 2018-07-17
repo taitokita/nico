@@ -9,6 +9,7 @@ use App\Http\Requests;
 use App\Shop; 
 use App\Tag;
 use App\Review;
+use App\Image;
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
@@ -32,7 +33,8 @@ class ShopsController extends Controller
                 }
             }
         }
-        if($_GET['maction']??"" == "search"){
+        
+        if($_GET['maction'] == "search"){
             
         
             $ret = Shop::where('name', 'LIKE',"%".$_GET['name']."%")->get();
@@ -41,13 +43,42 @@ class ShopsController extends Controller
             }
             foreach($ret as $r) {
             }
-        }   
+        }
+        else{
+              $japanese = Shop::where('tag_id', $_GET['maction'])->get();
+                      $searchResultWithShop = $japanese;
+
+              $french = Shop::where('tag_id', $_GET['maction'])->get();
+                      $searchResultWithShop = $french;  
+
+              $italian = Shop::where('tag_id', $_GET['maction'])->get();
+                      $searchResultWithShop = $italian;
+
+              $chinese = Shop::where('tag_id', $_GET['maction'])->get();
+                      $searchResultWithShop = $chinese;
+
+              $korean = Shop::where('tag_id', $_GET['maction'])->get();
+                      $searchResultWithShop = $korean;
+
+              $spanish = Shop::where('tag_id', $_GET['maction'])->get();
+                      $searchResultWithShop = $spanish;
+
+              $indian = Shop::where('tag_id', $_GET['maction'])->get();
+                      $searchResultWithShop = $indian;
+
+              $ethnic = Shop::where('tag_id', $_GET['maction'])->get();
+                      $searchResultWithShop = $ethnic;
+
+              $sakebar = Shop::where('tag_id', $_GET['maction'])->get();
+                      $searchResultWithShop = $sakebar;
+
+              $cafe = Shop::where('tag_id', $_GET['maction'])->get();
+                      $searchResultWithShop = $cafe;
+      }
         
         $data = [];
         if (\Auth::check()) {
             $user = \Auth::user();
-
-           // $shops = $user->shops()->orderBy('created_at', 'desc')->paginate(10);
 
             $data = [
                 'user' => $user,
@@ -84,7 +115,7 @@ class ShopsController extends Controller
             $query->where('name','like','%'.$name.'%');
         }
 
-        //もしemailがあれば
+        //もしtagがあれば
         if(!empty($tag)){
             $query->where('content','like','%'.$tag.'%');
         }
@@ -129,18 +160,15 @@ class ShopsController extends Controller
 
         ]);
         
-        foreach((array)$request->file('photo') as $gyu){
-         $gyu->store('photo');
-        }
-       if($request->file('photo')!=null){
-           foreach ($request->file('photo') as $photo) {
-              $filepath = $photo->store('photo');
+       if($request->file('photo')!=null && count($request->file('photo'))>0){
+            foreach((array)$request->file('photo') as $gyu){
+              $filepath = $gyu->store('photo');
             }
        }
        else {
         $filepath ='';
         }
-        $filepath = $request->file('photo')->store('photo');
+        
         $shop = new Shop;
         $shop->name = $request->name;
         $shop->content = $request->content;
@@ -148,6 +176,15 @@ class ShopsController extends Controller
         $shop->tag_id = Input::get('tag_id');
         $shop->path = $filepath; 
         $shop->save();
+        
+        if($request->file('photo')!=null && count($request->file('photo'))>0){
+       foreach((array)$request->file('photo') as $gyu){
+           $filepath = $gyu->store('photo');
+           $i = new Image;
+           $i->shops_id = $shop->id;
+           $i->url  = $filepath;
+           $i->save();
+       }}
         
 
         return redirect('/');
@@ -161,8 +198,8 @@ class ShopsController extends Controller
         $user = \Auth::user();
         $tags = Tag::All();
         $tagLabel = '';
+        $images = Image::where('shops_id', $id)->get();
        
-        
         foreach ($tags as $tag) {
             if($tag->id == $shop->tag_id) {
                 $name = $tag->name;
@@ -172,6 +209,7 @@ class ShopsController extends Controller
         
         return view('shops.show', [
             'shop' => $shop,
+            'images' =>  $images,
             'reviews' => $reviews,
             'user' => $user,
             'tags' =>$tags,
