@@ -17,13 +17,34 @@ footer {
     height: 50px;
 }
 
-/* cover */
+/*welcome*/
+/*.cont2 {*/
+/* position: relative;*/
+/* height: 100%;*/
+/* background-image: url("/images/nico1.jpg");*/
+/* background-size: cover;*/
+/* overflow: auto;*/
+/* font-family: "Open Sans", Helvetica, Arial, sans-serif;*/
+/*}*/
+
+
+
+
+
+
+.mainbody2 {
+ position: relative;
+ height: auto;
+ background: linear-gradient(to bottom, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+ transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+ transform: scale();
+}
 .cover {
     margin-top: -20px;
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background: url("/images/nico1.jpg") center center no-repeat;
+    background: url("/images/") center center no-repeat;
     background-size: cover;
 }
 .cover .cover-inner {
@@ -63,9 +84,9 @@ footer {
     margin-top: -20px;
     margin-bottom: 20px;
     width: 100%;
-    height: 200px;
+    height: 300px;
     /* showの写真 */
-    background: url("/images/nico9.jpg") center center no-repeat;
+    background: url("/images/") center center no-repeat;
     background-size: cover;
 }
 .cover1 .cover-inner {
@@ -114,7 +135,7 @@ footer {
   left: 5%;
   }
 
-#imageshow{
+.imageshow{
     max-width: 100%;
     height: auto;
 }
@@ -124,7 +145,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background: url("/images/nico2.jpg") center center no-repeat;
+    background: url("/images/") center center no-repeat;
     background-size: cover;
 }
 .cover2 .cover-inner {
@@ -157,7 +178,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background: url("/images/nico3.jpg") center center no-repeat;
+    background: url("/images/") center center no-repeat;
     background-size: cover;
 }
 .cover3 .cover-inner {
@@ -190,7 +211,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background: url("/images/nico4.jpg") center center no-repeat;
+    background: url("/images/") center center no-repeat;
     background-size: cover;
 }
 .cover4 .cover-inner {
@@ -218,12 +239,28 @@ footer {
 　　font-family: 'Permanent Marker', cursive;
 }
 
+/*users show*/
+.cont8 {
+ position: relative;
+ height: 100%;
+ background-image: url("/images/nico21.jpg");
+ background-size: cover;
+ overflow: auto;
+ font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+.mainbody8 {
+ position: relative;
+ height: auto;
+ background: linear-gradient(to bottom, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+ transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+ transform: scale();
+}
 .cover6 {
     margin-top: -20px;
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background: url("/images/nico8.jpg") center center no-repeat;
+    background: url("/images/") center center no-repeat;
     background-size: cover;
 }
 .cover6 .cover-inner {
@@ -250,12 +287,30 @@ footer {
     text-shadow: 5px 5px 1px #999999;
 　　font-family: 'Permanent Marker', cursive;
 }
+
+
+/*ranking favorite*/
+.cont9 {
+ position: relative;
+ height: 100%;
+ background-image: url("/images/");
+ background-size: cover;
+ overflow: auto;
+ font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+.mainbody9 {
+ position: relative;
+ height: auto;
+ background: linear-gradient(to bottom, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+ transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+ transform: scale();
+}
 .cover10 {
     margin-top: -20px;
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background: url("/images/nico6.jpg") center center no-repeat;
+    background: url("/images/") center center no-repeat;
     background-size: cover;
 }
 .cover10 .cover-inner {
@@ -279,12 +334,28 @@ footer {
 
 }
 
+/*ranking review*/
+.cont10 {
+ position: relative;
+ height: 100%;
+ background-image: url("/images/");
+ background-size: cover;
+ overflow: auto;
+ font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+.mainbody10 {
+ position: relative;
+ height: auto;
+ background: linear-gradient(to bottom, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+ transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+ transform: scale();
+}
 .cover11 {
     margin-top: -20px;
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background: url("/images/nico7.jpg") center center no-repeat;
+    background: url("/images/") center center no-repeat;
     background-size: cover;
 }
 .cover11 .cover-inner {
@@ -308,12 +379,6 @@ footer {
 
 }
 
-.cover .btn-success {
-    background-color: #ed486f;
-    border-color: #ed486f;
-}
-
-
 .dropdown-toggle{
     font-size: 15px;
     margin-top: 7px;
@@ -322,7 +387,7 @@ footer {
 
 /* shop */
 .shop .panel-body {
-    height:　70px;
+    height:　50px;
 }
 .shop .panel-heading {
     height: 250px;
@@ -410,7 +475,7 @@ footer {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
-    color: #777;
+    color: #EEEEEE	;
 }
 .user-profile .status ul li:last-child {
     border: none;
@@ -431,15 +496,16 @@ footer {
 
 /*ボタン装飾*/
 .hidden_box label {
-    padding: 15px;
+    padding: 20px;
     font-weight: bold;
-    border: solid 2px black;
+    border: solid 3px black;
     cursor :pointer;
+    background: #EEEEEE	;
 }
 
 /*ボタンホバー時*/
 .hidden_box label:hover {
-    background: #efefef;
+    background:#AAAAAA
 }
 
 /*チェックは見えなくする*/
@@ -458,7 +524,7 @@ footer {
 
 /*クリックで中身表示*/
 .hidden_box input:checked ~ .hidden_show {
-    padding: 10px 0;
+    padding: 8px 0;
     height: auto;
     opacity: 1;
 }
@@ -500,7 +566,7 @@ input, button {
  outline: none;
  border: none;
 }
-
+/*login*/
 .cont {
  position: relative;
  height: 100%;
@@ -509,6 +575,7 @@ input, button {
  overflow: auto;
  font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
+/*signup*/
 .cont1 {
  position: relative;
  height: 100%;
@@ -536,6 +603,7 @@ input, button {
  transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
  transform: scale(1);
 }
+
 .login.inactive {
  opacity: 0;
  transform: scale(1.1);
@@ -916,4 +984,498 @@ height: 3rem;
  to {
    stroke-dashoffset: 0;
  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*background slideshow*/
+.fadeSlider1 {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.fadeSlider1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.fadeSlider1 span.fadeSlider_01 {
+  background-image: url("/images/nico1.jpg");
+  animation: fadeSlideImg01 45s ease-out infinite;
+  animation-delay: 5s;
+}
+.fadeSlider1 span.fadeSlider_02 {
+  opacity: 0;
+  background-image: url("/images/nico2.jpg");
+  animation: fadeSlideImg02 45s ease-out infinite;
+  animation-delay: 5s;
+}
+.fadeSlider1 span.fadeSlider_03 {
+  opacity: 0;
+  background-image: url("/images/nico3.jpg");
+  animation: fadeSlideImg03 45s ease-out infinite;
+  animation-delay: 5s;
+}
+.fadeSlider1 span.fadeSlider_04 {
+  background-image: url("/images/nico4.jpg");
+  animation: fadeSlideImg04 45s ease-out infinite;
+  animation-delay: 5s;
+}
+.fadeSlider1 span.fadeSlider_05 {
+  opacity: 0;
+  background-image: url("/images/nico5.jpg");
+  animation: fadeSlideImg05 45s ease-out infinite;
+  animation-delay: 5s;
+}
+.fadeSlider1 span.fadeSlider_06 {
+  opacity: 0;
+  background-image: url("/images/nico6.jpg");
+  animation: fadeSlideImg06 45s ease-out infinite;
+  animation-delay: 5s;
+}
+.fadeSlider1 span.fadeSlider_07 {
+  background-image: url("/images/nico7.jpg");
+  animation: fadeSlideImg07 45s ease-out infinite;
+  animation-delay: 5s;
+}
+
+@keyframes fadeSlideImg01 {
+  0% {
+    opacity: 1;
+  }
+  14.28% {
+    opacity: 0;
+  }
+  28.57% {
+    opacity: 0;
+  }
+  42.85% {
+    opacity: 0;
+  }
+  57.13% {
+    opacity: 0;
+  }
+  71.41% {
+    opacity: 0;
+  }
+  85.69% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeSlideImg02 {
+  0% {
+    opacity: 0;
+  }
+  14.28% {
+    opacity: 1;
+  }
+  28.57% {
+    opacity: 0;
+  }
+  42.85% {
+    opacity: 0;
+  }
+  57.13% {
+    opacity: 0;
+  }
+  71.41% {
+    opacity: 0;
+  }
+  85.69% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeSlideImg03 {
+  0% {
+    opacity: 0;
+  }
+  14.28% {
+    opacity: 0;
+  }
+  28.57% {
+    opacity: 1;
+  }
+  42.85% {
+    opacity: 0;
+  }
+  57.13% {
+    opacity: 0;
+  }
+  71.41% {
+    opacity: 0;
+  }
+  85.69% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeSlideImg04 {
+  0% {
+    opacity: 0;
+  }
+  14.28% {
+    opacity: 0;
+  }
+  28.57% {
+    opacity: 0;
+  }
+  42.85% {
+    opacity: 1;
+  }
+  57.13% {
+    opacity: 0;
+  }
+  71.41% {
+    opacity: 0;
+  }
+  85.69% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeSlideImg05 {
+  0% {
+    opacity: 0;
+  }
+  14.28% {
+    opacity: 0;
+  }
+  28.57% {
+    opacity: 0;
+  }
+  42.85% {
+    opacity: 0;
+  }
+  57.13% {
+    opacity: 1;
+  }
+  71.41% {
+    opacity: 0;
+  }
+  85.69% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeSlideImg06 {
+  0% {
+    opacity: 0;
+  }
+  14.28% {
+    opacity: 0;
+  }
+  28.57% {
+    opacity: 0;
+  }
+  42.85% {
+    opacity: 0;
+  }
+  57.13% {
+    opacity: 0;
+  }
+  71.41% {
+    opacity: 1;
+  }
+  85.69% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeSlideImg07 {
+  0% {
+    opacity: 0;
+  }
+  14.28% {
+    opacity: 0;
+  }
+  28.57% {
+    opacity: 0;
+  }
+  42.85% {
+    opacity: 0;
+  }
+  57.13% {
+    opacity: 0;
+  }
+  71.41% {
+    opacity: 0;
+  }
+  85.69% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeSlider2 {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.fadeSlider2 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.fadeSlider2 span.fadeSlider_08 {
+  opacity: 0;
+  background-image: url("/images/nico8.jpg");
+  animation: fadeSlideImg08 45s ease-out infinite;
+  animation-delay: 5s;
+}
+.fadeSlider2 span.fadeSlider_09 {
+  opacity: 0;
+  background-image: url("/images/nico9.jpg");
+  animation: fadeSlideImg09 45s ease-out infinite;
+  animation-delay: 5s;
+}
+.fadeSlider2 span.fadeSlider_10 {
+  background-image: url("/images/nico10.jpg");
+  animation: fadeSlideImg10 45s ease-out infinite;
+  animation-delay: 5s;
+}
+.fadeSlider2 span.fadeSlider_11 {
+  opacity: 0;
+  background-image: url("/images/nico11.jpg");
+  animation: fadeSlideImg11 45s ease-out infinite;
+  animation-delay: 5s;
+}
+.fadeSlider2 span.fadeSlider_12 {
+  opacity: 0;
+  background-image: url("/images/nico12.jpg");
+  animation: fadeSlideImg12 45s ease-out infinite;
+  animation-delay: 5s;
+}
+.fadeSlider2 span.fadeSlider_13 {
+  opacity: 0;
+  background-image: url("/images/nico13.jpg");
+  animation: fadeSlideImg13 45s ease-out infinite;
+  animation-delay: 5s;
+}
+.fadeSlider2 span.fadeSlider_14 {
+  opacity: 0;
+  background-image: url("/images/nico14.jpg");
+  animation: fadeSlideImg14 45s ease-out infinite;
+  animation-delay: 5s;
+}
+@keyframes fadeSlideImg08 {
+  0% {
+    opacity: 1;
+  }
+  14.28% {
+    opacity: 0;
+  }
+  28.57% {
+    opacity: 0;
+  }
+  42.85% {
+    opacity: 0;
+  }
+  57.13% {
+    opacity: 0;
+  }
+  71.41% {
+    opacity: 0;
+  }
+  85.69% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeSlideImg09 {
+  0% {
+    opacity: 0;
+  }
+  14.28% {
+    opacity: 1;
+  }
+  28.57% {
+    opacity: 0;
+  }
+  42.85% {
+    opacity: 0;
+  }
+  57.13% {
+    opacity: 0;
+  }
+  71.41% {
+    opacity: 0;
+  }
+  85.69% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeSlideImg10 {
+  0% {
+    opacity: 0;
+  }
+  14.28% {
+    opacity: 0;
+  }
+  28.57% {
+    opacity: 1;
+  }
+  42.85% {
+    opacity: 0;
+  }
+  57.13% {
+    opacity: 0;
+  }
+  71.41% {
+    opacity: 0;
+  }
+  85.69% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeSlideImg11 {
+  0% {
+    opacity: 0;
+  }
+  14.28% {
+    opacity: 0;
+  }
+  28.57% {
+    opacity: 0;
+  }
+  42.85% {
+    opacity: 1;
+  }
+  57.13% {
+    opacity: 0;
+  }
+  71.41% {
+    opacity: 0;
+  }
+  85.69% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeSlideImg12 {
+  0% {
+    opacity: 0;
+  }
+  14.28% {
+    opacity: 0;
+  }
+  28.57% {
+    opacity: 0;
+  }
+  42.85% {
+    opacity: 0;
+  }
+  57.13% {
+    opacity: 1;
+  }
+  71.41% {
+    opacity: 0;
+  }
+  85.69% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeSlideImg13 {
+  0% {
+    opacity: 0;
+  }
+  14.28% {
+    opacity: 0;
+  }
+  28.57% {
+    opacity: 0;
+  }
+  42.85% {
+    opacity: 0;
+  }
+  57.13% {
+    opacity: 0;
+  }
+  71.41% {
+    opacity: 1;
+  }
+  85.69% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeSlideImg14 {
+  0% {
+    opacity: 0;
+  }
+  14.28% {
+    opacity: 0;
+  }
+  28.57% {
+    opacity: 0;
+  }
+  42.85% {
+    opacity: 0;
+  }
+  57.13% {
+    opacity: 0;
+  }
+  71.41% {
+    opacity: 0;
+  }
+  85.69% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

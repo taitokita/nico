@@ -232,13 +232,34 @@ class ShopsController extends Controller
         $this->validate($request, [
             'name' => 'required|max:20', 
             'content' => 'required|max:191',
+            'tag_id' => 'required',
         ]);
+        
+        if($request->file('photo')!=null && count($request->file('photo'))>0){
+            foreach((array)$request->file('photo') as $gyu){
+              $filepath = $gyu->store('photo');
+            }
+       }
+       else {
+        $filepath ='';
+        }
         
 
         $shop = Shop::find($id);
         $shop->name = $request->name;
         $shop->content = $request->content;
+        $shop->tag_id = Input::get('tag_id');
+        $shop->path = $filepath; 
         $shop->save();
+        
+        if($request->file('photo')!=null && count($request->file('photo'))>0){
+        foreach((array)$request->file('photo') as $gyu){
+           $filepath = $gyu->store('photo');
+           $i = new Image;
+           $i->shops_id = $shop->id;
+           $i->url  = $filepath;
+           $i->save();
+        }}
         
         return redirect('/');
 

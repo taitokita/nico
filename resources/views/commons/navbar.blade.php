@@ -50,7 +50,7 @@
                               </li>
                                <li><form method="get" action="{{route('shops.index')}}">
                                       <input type="hidden" name="maction" value="3">
-                                      <input type="submit" value="Itarian" class="btn btn-link">
+                                      <input type="submit" value="Italian" class="btn btn-link">
                                   </form>
                               </li>
                                <li><form method="get" action="{{route('shops.index')}}">

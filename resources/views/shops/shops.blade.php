@@ -28,7 +28,6 @@
                                     <p class="text-center">{{ $rank=$rank}}位: {{ $old=$shop->count}} 件</p>
                                 </div>
                             @endif
-                    
                         @else
                         <?php
                             $tagLabel = '';
@@ -40,7 +39,6 @@
                                 }
                             }
                             ?>
-                            
                             <div class="panel-footer">
                                 <p class="text-center">{{$name}}</p>
                             </div>

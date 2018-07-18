@@ -1,6 +1,17 @@
 <link rel="stylesheet" href="<link rel="stylesheet"">
 @extends('layouts.app')
 
+    <div class="fadeSlider1">
+        <span class="fadeSlider_01"></span>          
+        <span class="fadeSlider_02"></span>
+        <span class="fadeSlider_03"></span>
+        <span class="fadeSlider_04"></span>          
+        <span class="fadeSlider_05"></span>
+        <span class="fadeSlider_06"></span>
+        <span class="fadeSlider_07"></span>          
+        
+    </div>
+        <div class="mainbody2">
 @section('content')
     <div class="cover1">
         <div class="cover-inner">
@@ -12,12 +23,12 @@
 <body>
      <div class=imageshowflame>
        @if(empty($shop->path))
-       <p><img id=imageshow src="{{asset('item/photo/dummy.jpg') }}"></p>
+       
        @else
        
        @endif
        @foreach($images as $image)
-       <div style='display:inline-block;'><img id=imageshow src="{{asset('item/'.$image->url) }}"></div>
+       <div style='display:inline-block;'><img class=imageshow src="{{asset('item/'.$image->url) }}"></div>
        @endforeach
    </div>
    
@@ -38,8 +49,17 @@
             <p>Post time : {{ $shop->created_at}}</p>
     </div>
             
-     @include('shops.favorite_button', ['shop' => $shop],['class' => 'btn'])
+    @include('shops.favorite_button', ['shop' => $shop],['class' => 'btn'])
     
+    <div>
+        @if (Auth::id() == $shop->user_id)
+            {!! link_to_route('shops.edit', 'edit this page', ['id' => $shop->id], ['class' => 'btn btn-default']) !!}
+        
+        　　{!! Form::model($shop, ['route' => ['shops.destroy', $shop->id], 'method' => 'delete']) !!}
+                {!! Form::submit('delete this page', ['class' => 'btn btn-danger']) !!}
+            {!! Form::close() !!}
+        @endif
+    </div>
     
     <div class="form-group">
         {!! Form::open(['route' => 'reviews.store']) !!}
@@ -55,15 +75,6 @@
         @endif
     </div>    
     
-    <div>
-        @if (Auth::id() == $shop->user_id)
-            {!! link_to_route('shops.edit', 'edit this page', ['id' => $shop->id], ['class' => 'btn btn-default']) !!}
-        
-        　　{!! Form::model($shop, ['route' => ['shops.destroy', $shop->id], 'method' => 'delete']) !!}
-                {!! Form::submit('delete this page', ['class' => 'btn btn-danger']) !!}
-            {!! Form::close() !!}
-        @endif
-    </div>
 </body>
 @endsection
 

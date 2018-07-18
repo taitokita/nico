@@ -19,7 +19,7 @@ class TagTableSeeder extends Seeder
             'name' => 'French',
             ],
             [
-            'name' => 'Itarian',
+            'name' => 'Italian',
             ],
             [
             'name' => 'Chinese',
