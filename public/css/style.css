@@ -44,7 +44,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background: url("/images/") center center no-repeat;
+    background-color: black center center no-repeat;
     background-size: cover;
 }
 .cover .cover-inner {
@@ -86,7 +86,7 @@ footer {
     width: 100%;
     height: 300px;
     /* showの写真 */
-    background: url("/images/") center center no-repeat;
+    background-color: black;
     background-size: cover;
 }
 .cover1 .cover-inner {
@@ -145,7 +145,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background: url("/images/") center center no-repeat;
+    background-color: black center center no-repeat;
     background-size: cover;
 }
 .cover2 .cover-inner {
@@ -178,7 +178,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background: url("/images/") center center no-repeat;
+    background-color: black center center no-repeat;
     background-size: cover;
 }
 .cover3 .cover-inner {
@@ -211,7 +211,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background: url("/images/") center center no-repeat;
+    background-color: black center center no-repeat;
     background-size: cover;
 }
 .cover4 .cover-inner {
@@ -260,7 +260,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background: url("/images/") center center no-repeat;
+    background-color: black center center no-repeat;
     background-size: cover;
 }
 .cover6 .cover-inner {
@@ -293,7 +293,7 @@ footer {
 .cont9 {
  position: relative;
  height: 100%;
- background-image: url("/images/");
+ background-color: black;
  background-size: cover;
  overflow: auto;
  font-family: "Open Sans", Helvetica, Arial, sans-serif;
@@ -310,7 +310,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background: url("/images/") center center no-repeat;
+    background-color: black center center no-repeat;
     background-size: cover;
 }
 .cover10 .cover-inner {
@@ -338,7 +338,7 @@ footer {
 .cont10 {
  position: relative;
  height: 100%;
- background-image: url("/images/");
+ background-color: black;
  background-size: cover;
  overflow: auto;
  font-family: "Open Sans", Helvetica, Arial, sans-serif;
@@ -355,7 +355,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background: url("/images/") center center no-repeat;
+    background-color: black center center no-repeat;
     background-size: cover;
 }
 .cover11 .cover-inner {
@@ -1479,3 +1479,4 @@ height: 3rem;
     opacity: 0;
   }
 }
+

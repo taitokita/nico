@@ -14,7 +14,7 @@
     <div class="cover10">
         <div class="cover-inner">
             <div class="cover-contents">
-               <h1>Favoriteランキング</h1>
+               <h1>Favorite Ranking</h1>
         </div>
     </div>
 </div>

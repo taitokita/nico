@@ -15,7 +15,7 @@
     <div class="cover4">
         <div class="cover-inner">
             <div class="cover-contents">
-                 <h1>Edit {{ $shop->name }} page</h1>
+                 <h1>Edit {{ $shop->name }}</h1>
             </div>
         </div>
     </div>

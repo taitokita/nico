@@ -14,7 +14,7 @@
 <div class="cover6">
     <div class="cover-inner">
         <div class="cover-contents">
-            <h1>{{ $user->name }}'s profile page</h1>
+            <h1>{{ $user->name }}'s profile</h1>
         </div>
     </div>
 </div>

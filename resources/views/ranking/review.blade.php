@@ -14,7 +14,7 @@
     <div class="cover11">
         <div class="cover-inner">
             <div class="cover-contents">
-               <h1>Reviewランキング</h1>
+               <h1>Review Ranking</h1>
         </div>
     </div>
 </div>

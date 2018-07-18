@@ -21,11 +21,11 @@
                         @if (isset($shop->count))
                             @if($shop->count!=$old)
                                 <div class="panel-footer">
-                                    <p class="text-center">{{ $rank=$rank+1}}位: {{ $old=$shop->count}}　件</p>
+                                    <p class="text-center">No.{{ $rank=$rank+1}}: {{ $old=$shop->count}} favorite</p>
                                 </div>
                             @else (isset($shop->count))
                                 <div class="panel-footer">
-                                    <p class="text-center">{{ $rank=$rank}}位: {{ $old=$shop->count}} 件</p>
+                                    <p class="text-center">No.{{ $rank=$rank}}: {{ $old=$shop->count}} favorite</p>
                                 </div>
                             @endif
                         @else
