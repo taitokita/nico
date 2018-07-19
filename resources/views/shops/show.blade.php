@@ -42,12 +42,46 @@
            }
        }
        ?>
-            <p>Name : {{ $shop->name }}</p>    
-            <p>Category : {{ $name}}</p>
-            <p>Coment : {{ $shop->content }}</p>
-            <p>Location : </p>
-            <p>Post time : {{ $shop->created_at}}</p>
-    </div>
+            <div class="hidden_box_shop">
+              <label>NAME</label>
+                  <div class="hidden_show">
+                   <div class="hidden_box_shop_name"> : {{ $shop->name }}</p>
+                      </div>
+                  </div>
+              </div>  
+
+          <div class="hidden_box_shop">
+              <label>CATEGORY</label>
+                  <div class="hidden_show">
+                   <div class="hidden_box_shop_category"> : {{ $name}}</p>
+                      </div>
+                  </div>
+              </div>  
+
+         <div class="hidden_box_shop">
+              <label>LOCATION</label>
+                  <div class="hidden_show">
+                   <div class="hidden_box_shop_location"> : FUTAKOTAMAGAWA</p>
+                      </div>
+                  </div>
+              </div>  
+
+          <div class="hidden_box_shop">
+              <label>POST TIME</label>
+                  <div class="hidden_show">
+                   <div class="hidden_box_shop_posttime"> : {{ $shop->created_at}}</p>
+                      </div>
+                  </div>
+              </div>      
+          </div>
+          
+          <div class="hidden_box_shop">
+              <label>COMMENT</label>
+                  <div class="hidden_show">
+                   <div class="hidden_box_shop_content"> : {{ $shop->content }}</p>
+                  </div>
+              </div>
+          </div>  
             
     @include('shops.favorite_button', ['shop' => $shop],['class' => 'btn'])
     

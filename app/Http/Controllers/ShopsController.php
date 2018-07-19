@@ -163,7 +163,9 @@ class ShopsController extends Controller
        if($request->file('photo')!=null && count($request->file('photo'))>0){
             foreach((array)$request->file('photo') as $gyu){
               $filepath = $gyu->store('photo');
+//              var_dump($gyu);
             }
+  //          return;
        }
        else {
         $filepath ='';

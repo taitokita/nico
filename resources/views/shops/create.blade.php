@@ -1,44 +1,57 @@
 @extends('layouts.app')
 
-    <div class="fadeSlider2">
-        <span class="fadeSlider_08"></span>
-        <span class="fadeSlider_09"></span>
-        <span class="fadeSlider_10"></span>          
-        <span class="fadeSlider_11"></span>
-        <span class="fadeSlider_12"></span>
-        <span class="fadeSlider_13"></span>
-        <span class="fadeSlider_14"></span>
+    <div class="fadeSlider1">
+        <span class="fadeSlider_01"></span>          
+        <span class="fadeSlider_02"></span>
+        <span class="fadeSlider_03"></span>
+        <span class="fadeSlider_04"></span>          
+        <span class="fadeSlider_05"></span>
+        <span class="fadeSlider_06"></span>
+        <span class="fadeSlider_07"></span>          
+        
     </div>
-        <div class="mainbody2">
+    <div class="mainbody2">
+
 @section('content')
-    <div class="cover3">
-        <div class="cover-inner">
-            <div class="cover-contents">
-                <h1>Shop posting page</h1>
-            </div>
-        </div>
-    </div>
-    <div class="search">
-        <div class="row">
-            <div class="text-center">
-                    {!! Form::model($shop, ['route' => 'shops.store', 'enctype'=>'multipart/form-data']) !!}
-            
-                <div class="form-group">
-                    {!! Form::label('name', 'Shop name:') !!}
-                    {!! Form::text('name', null, ['class' => 'form-control input-lg', 'placeholder' => 'Input Shop name', 'size' => 40]) !!}
-                </div>
-                    
-                <div class="form-group">
-                    {!! Form::label('content', 'content:') !!}
-                    {!! Form::text('content', null, ['class' => 'form-control input-lg', 'placeholder' => 'Input coment', 'size' => 40]) !!}
-                </div>
-                
-                <div class="form-group">
-            		<label for="tag_id" class="">Category</label>
-            		<div class="">
-            			<select name="tag_id" type="text" class="">
-            				<option></option>
-            				<option value="1" name="1">Japanese</option>
+    {!! Form::model($shop, ['route' => 'shops.store', 'files' => 'true', 'enctype'=>'multipart/form-data']) !!}
+<div id="form-main">
+ <div id="form-div">
+   <form class="form" id="form1">
+     <form action="./filesend.cgi" method="post" enctype="multipart/form-data">
+       <label style="width:100%;">
+         
+         <span class="filelabel" title="Photo select">
+           <img src="http://icooon-mono.com/i/icon_16250/icon_162500_256.png" width="30" height="30" >
+           &nbsp;&nbsp;Photo
+         </span>
+       <input type="file" name="photo[]" id="filesend" multiple="multiple">
+       </label>
+ 
+     </form>
+    <br>
+    <br>
+       <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input"name="name" placeholder="Shopname" id="name" />
+    <br>
+    <br> <style type="text/css">
+   
+.bootstrap-select {
+ display: block;
+ width: 100%;
+ height:55px;
+ }
+
+.glyphicon.glyphicon-tag{
+font-size:30px;
+}
+
+.btn {
+ height:55px;
+}
+ </style>
+     <select  name="tag_id" type="text" class="form-control selectpicker"style="font-size: 18px" >
+   
+                           <option class="content" data-icon="glyphicon-tag">&nbsp;&nbsp;Category</option>
+                           <option value="1" name="1">Japanese</option>
             				<option value="2" name="2">French</option>
             				<option value="3" name="3">italian</option>
             				<option value="4" name="4">Chinese</option>
@@ -48,21 +61,21 @@
             				<option value="8" name="8">Ethnic</option>
             				<option value="9" name="9">Izakaya・Bar</option>
             				<option value="10" name="10">Café</option>
-            			</select>
-            		</div>
-            	</div>
+     </select>
 
-                
-                <div class="form-group">
-                    <label for="photo">Picture file:</label>
-                    {!! Form::file('photo[]', ["multiple"]) !!}
-                </div>
-                
-                {!! Form::submit('Post', ['class' => 'btn btn-primary lg']) !!}
-        
-            　　{!! Form::close() !!}
-            </div>
-        </div>
-    </div>
-
+    <br>
+    <br>
+    <br>
+     <p class="text">
+       <textarea name="content" class="validate[required,length[6,300]] feedback-input" id="comment"  placeholder="Content"></textarea>
+     </p>
+     <div class="submit">
+       <input type="submit" value="Post" id="button-blue"/>
+       
+       <div class="ease"></div>
+     </div>
+   </form>
+ </div>
+　{!! Form::close() !!}
 @endsection
+            				
