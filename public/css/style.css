@@ -27,24 +27,12 @@ footer {
 /* font-family: "Open Sans", Helvetica, Arial, sans-serif;*/
 /*}*/
 
-
-
-
-
-
-.mainbody2 {
- position: relative;
- height: auto;
- background: linear-gradient(to bottom, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
- transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
- transform: scale();
-}
 .cover {
     margin-top: -20px;
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background-color: black center center no-repeat;
+    background-color: rgba(0,0,0,0.4) center center no-repeat;
     background-size: cover;
 }
 .cover .cover-inner {
@@ -57,7 +45,9 @@ footer {
     vertical-align: middle;
     text-align: center;
     position: relative;
+    width: 100%;
 }
+
 .cover .cover-inner .cover-contents h1 {
     margin: 0 0 20px 0;
     color: #fff;
@@ -86,7 +76,7 @@ footer {
     width: 100%;
     height: 300px;
     /* showの写真 */
-    background-color: black;
+    background-color:  ;
     background-size: cover;
 }
 .cover1 .cover-inner {
@@ -99,6 +89,7 @@ footer {
     vertical-align: middle;
     text-align: center;
     position: relative;
+    width: 100%;
 }
 .cover1 .cover-inner .cover-contents h1 {
     margin: 0 0 20px 0;
@@ -145,7 +136,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background-color: black center center no-repeat;
+    background-color: rgba(0,0,0,0.4) center center no-repeat;
     background-size: cover;
 }
 .cover2 .cover-inner {
@@ -158,6 +149,7 @@ footer {
     vertical-align: middle;
     text-align: center;
     position: relative;
+    width: 100%;
 }
 .cover2 .cover-inner .cover-contents h1 {
     margin: 0 0 20px 0;
@@ -178,7 +170,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background-color: black center center no-repeat;
+    background-color: rgba(0,0,0,0.4) center center no-repeat;
     background-size: cover;
 }
 .cover3 .cover-inner {
@@ -191,6 +183,7 @@ footer {
     vertical-align: middle;
     text-align: center;
     position: relative;
+    width: 100%;
 }
 .cover3 .cover-inner .cover-contents h1 {
     margin: 0 0 20px 0;
@@ -211,7 +204,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background-color: black center center no-repeat;
+    background-color: rgba(0,0,0,0.4) center center no-repeat;
     background-size: cover;
 }
 .cover4 .cover-inner {
@@ -224,6 +217,7 @@ footer {
     vertical-align: middle;
     text-align: center;
     position: relative;
+    width: 100%;
 }
 .cover4 .cover-inner .cover-contents h1 {
     margin: 0 0 20px 0;
@@ -260,7 +254,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background-color: black center center no-repeat;
+    background-color: rgba(0,0,0,0.4) center center no-repeat;
     background-size: cover;
 }
 .cover6 .cover-inner {
@@ -273,6 +267,7 @@ footer {
     vertical-align: middle;
     text-align: center;
     position: relative;
+    width: 100%;
 }
 .cover6 .cover-inner .cover-contents h1 {
     margin: 0 0 20px 0;
@@ -293,7 +288,7 @@ footer {
 .cont9 {
  position: relative;
  height: 100%;
- background-color: black;
+ background-color: rgba(0,0,0,0.4);
  background-size: cover;
  overflow: auto;
  font-family: "Open Sans", Helvetica, Arial, sans-serif;
@@ -310,7 +305,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background-color: black center center no-repeat;
+    background-color: rgba(0,0,0,0.4) center center no-repeat;
     background-size: cover;
 }
 .cover10 .cover-inner {
@@ -323,6 +318,7 @@ footer {
     vertical-align: middle;
     text-align: center;
     position: relative;
+    width: 100%;
 }
 .cover10 .cover-inner .cover-contents h1 {
     margin: 0 0 20px 0;
@@ -338,7 +334,7 @@ footer {
 .cont10 {
  position: relative;
  height: 100%;
- background-color: black;
+ background-color: rgba(0,0,0,0.4);
  background-size: cover;
  overflow: auto;
  font-family: "Open Sans", Helvetica, Arial, sans-serif;
@@ -355,7 +351,7 @@ footer {
     margin-bottom: 20px;
     width: 100%;
     height: 300px;
-    background-color: black center center no-repeat;
+    background-color: rgba(0,0,0,0.4) center center no-repeat;
     background-size: cover;
 }
 .cover11 .cover-inner {
@@ -368,6 +364,7 @@ footer {
     vertical-align: middle;
     text-align: center;
     position: relative;
+    width: 100%;
 }
 .cover11 .cover-inner .cover-contents h1 {
     margin: 0 0 20px 0;
@@ -498,7 +495,7 @@ footer {
 .hidden_box label {
     padding: 20px;
     font-weight: bold;
-    border: solid 3px black;
+    border: solid 3px rgba(0,0,0,0.4);
     cursor :pointer;
     background: #EEEEEE	;
 }
@@ -997,6 +994,18 @@ height: 3rem;
 
 
 /*background slideshow*/
+
+
+.mainbody2 {
+ position: relative;
+ height: auto;
+ background: linear-gradient(to bottom, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+ transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+ transform: scale();
+}
+
+
+
 .fadeSlider1 {
   position: fixed;
   z-index: -1;
@@ -1004,6 +1013,7 @@ height: 3rem;
   left: 0;
   width: 100%;
   height: 100%;
+  
 }
 .fadeSlider1 span {
   position: absolute;
@@ -1520,7 +1530,7 @@ height: 3rem;
 
 #form-main{
    width:100%;
-   float:left;
+  
    padding-top:0px;
 }
 
@@ -1530,12 +1540,11 @@ height: 3rem;
    padding-right:35px;
    padding-top:35px;
    padding-bottom:50px;
-   width: 450px;
-   float: left;
-   left: 50%;
-   position: absolute;
- margin-top:30px;
-   margin-left: -260px;
+   width: 50%;
+   margin-right: 25%;
+   margin-left: 25%;
+   /*position: relative;*/
+ margin-top:20px;
  -moz-border-radius: 7px;
  -webkit-border-radius: 7px;
 }
@@ -1639,13 +1648,13 @@ input:focus, textarea:focus {
    background-color:white;
 }
 
-#button-blue{
+#button-black{
    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
    float:left;
    width: 100%;
-   border: #fbfbfb solid 4px;
+   border: white solid 4px;
    cursor:pointer;
-   background-color: #3498db;
+   background-color: black;
    color:white;
    font-size:24px;
    padding-top:22px;
@@ -1657,7 +1666,7 @@ input:focus, textarea:focus {
  font-weight:700;
 }
 
-#button-blue:hover{
+#button-black:hover{
    background-color: rgba(0,0,0,0);
    color: #0493bd;
 }
@@ -1695,7 +1704,7 @@ input:focus, textarea:focus {
 .filelabel {
   background-color: white;  /* 背景色 */
   color: #666666    ;              /* 文字色 */
-  /*border: 1px solid black;  /* 枠線 */
+  /*border: 1px solid rgba(0,0,0,0.4);  /* 枠線 */
   /*border-radius: 3em;        /* 角丸 */
   padding: 13px 13px;         /* 内側の余白 */
   display: inline-block;     /* インラインブロック化 */
@@ -1740,4 +1749,121 @@ span.filter-option.pull-left {
    color:#666666;
     
    
+}
+
+
+
+
+
+
+/*head plan*/
+
+.plate {
+  max-width: 100%;
+  margin: 10% auto;
+}
+.shadow {
+  color: #fff;
+  font-family: Arvo;
+  font-weight: bold;
+  text-shadow:
+    -3px -3px 0 #222,
+    3px -3px 0 #222,
+    -3px 3px 0 #222,
+    3px 3px 0 #222,
+    4px 4px 0 #fff,
+    5px 5px 0 #fff,
+    6px 6px 0 #fff,
+    7px 7px 0 #fff;
+  line-height: 0.8em;
+  letter-spacing: 0.1em;
+  transform: scaleY(0.7);
+  -webkit-transform: scaleY(0.7);
+  -moz-transform: scaleY(0.7);
+  margin:0;
+  text-align: center;
+}
+.script {
+  font-family: "Seaweed Script";
+  color: #fff;
+  text-align: center;
+  font-size: 40px;
+  position: relative;
+  margin:0;
+}
+.script span {
+  
+  padding: 0 0.3em;
+}
+.script:before {
+  content:"";
+  display: block;
+  position: absolute;
+  z-index:-1;
+  top: 50%;
+  width: 100%;
+  border-bottom: 3px solid #fff;
+}
+.text1 {
+  font-size: 60px;
+}
+.text2 {
+  font-size: 169px;
+}
+.text3 {
+  font-size: 100px;
+}
+
+
+
+
+
+
+
+/*showpage*/
+.sandbox-correct-pronounciation {
+  padding: 10em 0 10em 0;
+}
+.heading-correct-pronounciation {
+  margin: auto;
+  text-align: center;
+  position: relative;
+}
+h1 {
+  color: #fff;
+  font-family: 'Cardo', serif;
+  font-size: 1.5em;
+  font-weight: normal;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  line-height: 2.2em;
+}
+em {
+  font-family: 'EB Garamond', serif;
+  font-size: 3.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  font-style: normal;
+  padding-top: 0.1em;
+  text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.1);
+}
+em::before,
+em::after {
+  content: "§";
+  display: inline-block;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  opacity: 0.2;
+  margin: 0 0.6em;
+  font-size: 0.5em;
+}
+.bottom {
+  font-size: 1.5em;
+  letter-spacing: 0.07em;
+  font-size: 1em;
+  display: block;
 }

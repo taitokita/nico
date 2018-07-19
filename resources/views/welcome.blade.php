@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
     <div class="fadeSlider1">
         <span class="fadeSlider_01"></span>          
         <span class="fadeSlider_02"></span>
@@ -15,8 +16,13 @@
         <div class="cover">
             <div class="cover-inner">
                 <div class="cover-contents">
-                    <h1>Nico</h1>
-                    <h2>Design, the Time after work.</h2>
+                    <div class="cover-contents" >
+                        <div class="plate" >
+                          <p class="script"><span>u gonna</span></p>
+                          <p class="shadow text2">Nico</p>
+                          <p class="script"><span>by TK kingdom</span></p>
+                        </div>
+                    </div>
                     @if (!Auth::check())
                         <a href="{{ route('signup.get') }}" class="btn btn-default btn-lg">Sign up</a>
                         <a href="{{ route('login') }}"class="btn btn-default btn-lg">Log in</a>

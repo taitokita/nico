@@ -9,14 +9,26 @@
         <span class="fadeSlider_05"></span>
         <span class="fadeSlider_06"></span>
         <span class="fadeSlider_07"></span>          
-        
     </div>
         <div class="mainbody2">
 @section('content')
+<?php
+       $tagLabel = '';
+       foreach ($tags as $tag) {
+           if($tag->id == $shop->tag_id) {
+               $name = $tag->name;
+               break;
+           }
+       }
+       ?>
     <div class="cover1">
         <div class="cover-inner">
-            <div class="cover-contents">
-                <h1>{{ $shop->name }}'s page</h1>
+            <div class="sandbox sandbox-correct-pronounciation">
+              <h1 class="heading heading-correct-pronounciation">
+                The
+                <em>{{ $shop->name }}</em>
+               {{ $name}} style
+              </h1>
             </div>
         </div>
     </div>
@@ -33,15 +45,6 @@
    </div>
    
    <div class='showcontents'>
-       <?php
-       $tagLabel = '';
-       foreach ($tags as $tag) {
-           if($tag->id == $shop->tag_id) {
-               $name = $tag->name;
-               break;
-           }
-       }
-       ?>
             <div class="hidden_box_shop">
               <label>NAME</label>
                   <div class="hidden_show">

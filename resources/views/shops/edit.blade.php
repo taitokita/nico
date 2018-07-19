@@ -11,8 +11,8 @@
         
     </div>
     <div class="mainbody2">
-
 @section('content')
+    
 {!! Form::model($shop, ['route' => ['shops.update', $shop->id], 'method' => 'put','files' => 'true', 'enctype'=>'multipart/form-data']) !!}
 <center>
 <h1>Edit {{ $shop->name }}'s page </h1>
@@ -52,6 +52,7 @@ font-size:30px;
 
 .btn {
  height:55px;
+ margin-top: 0px;
 }
  </style>
      <select  name="tag_id" type="text" class="form-control selectpicker"style="font-size: 18px" >
@@ -80,11 +81,12 @@ font-size:30px;
      
      
      <div class="submit">
-       <input type="submit" value="Edit" id="button-blue"/>
+       <input type="submit" value="Edit" id="button-black"/>
        
        <div class="ease"></div>
      </div>
    </form>
  </div>
 　{!! Form::close() !!}
+</div>
 @endsection
