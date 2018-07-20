@@ -18,6 +18,11 @@
         <link href="https://fonts.googleapis.com/css?family=Caveat"              rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Homemade+Apple"   
         
+        
+        <link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
+       <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
+        
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

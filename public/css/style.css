@@ -561,7 +561,7 @@ footer {
 
 
 /*log in & register*/
-＊,＊ :before, *:after {
+*,* :before, *:after {
  box-sizing: border-box;
  margin: 0;
  padding: 0;
@@ -1945,4 +1945,144 @@ width:125px;
 .button_edit:hover{
  background-color: #188291;
  color: #ffffff;
+}
+
+
+
+
+
+
+.button {
+ display: inline-block;
+ width: 200px;
+ height: 54px;
+ text-align: center;
+ text-decoration: none;
+ line-height: 54px;
+ outline: none;
+ font-size: 30px;
+ background-color:#FFDDFF    ;
+ 
+ 
+}
+.button::before,
+.button::after {
+ position: absolute;
+ z-index: -1;
+ display: block;
+ content: '';
+ 
+}
+.button,
+.button::before,
+.button::after {
+ -webkit-box-sizing: border-box;
+ -moz-box-sizing: border-box;
+ box-sizing: border-box;
+ -webkit-transition: all .3s;
+ transition: all .3s;
+}
+
+.button {
+ position: relative;
+ z-index: 2;
+ border: 2px solid #FFDDFF    ;
+ font-family: 'Teko', sans-serif;
+ color: #333;
+ line-height: 50px;
+ -webkit-perspective: 300px;
+ perspective: 300px;
+ -webkit-transform-style: preserve-3d;
+ transform-style: preserve-3d;
+}
+.button:hover {
+ color: #fff;
+}
+.button::after {
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background:#DDDDDD;
+ -webkit-transform-origin: center top;
+ transform-origin: center top;
+ -webkit-transform: rotateX(90deg);
+ transform: rotateX(90deg);
+ opacity: 0;
+}
+
+.button:hover::after {
+ -webkit-transform: rotateX(0);
+ transform: rotateX(0);
+ opacity: 1;
+}
+
+
+
+
+
+
+.button_unlike {
+ display: inline-block;
+ width: 200px;
+ height: 54px;
+ text-align: center;
+ text-decoration: none;
+ line-height: 54px;
+ outline: none;
+ font-size: 30px;
+ background-color:    #DDDDDD;
+ 
+ 
+}
+.button_unlike::before,
+.button_unlike::after {
+ position: absolute;
+ z-index: -1;
+ display: block;
+ content: '';
+ 
+}
+.button_unlike,
+.button_unlike::before,
+.button_unlike::after {
+ -webkit-box-sizing: border-box;
+ -moz-box-sizing: border-box;
+ box-sizing: border-box;
+ -webkit-transition: all .3s;
+ transition: all .3s;
+}
+
+.button_unlike {
+ position: relative;
+ z-index: 2;
+ border: 2px solid #FFDDFF    ;
+ font-family: 'Teko', sans-serif;
+ color: #333;
+ line-height: 50px;
+ -webkit-perspective: 300px;
+ perspective: 300px;
+ -webkit-transform-style: preserve-3d;
+ transform-style: preserve-3d;
+}
+.button_unlike:hover {
+ color: #fff;
+}
+.button_unlike::after {
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background:#FFDDFF;
+ -webkit-transform-origin: center top;
+ transform-origin: center top;
+ -webkit-transform: rotateX(90deg);
+ transform: rotateX(90deg);
+ opacity: 0;
+}
+
+.button_unlike:hover::after {
+ -webkit-transform: rotateX(0);
+ transform: rotateX(0);
+ opacity: 1;
 }

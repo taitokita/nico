@@ -1,19 +1,39 @@
 <ul class="media-list">
 @foreach ($reviews as $review)
     <?php $user = $review->user; ?>
+    
     <li class="media">
         <div class="media-left">
             <img src="{{ Gravatar::src($user->password, 100) . '&d=mm' }}" alt="" class="img-circle">
         </div>
-        <div class="media-body">
-            <div>
-                {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!} <span class="text-muted">posted at {{ $review->created_at }}</span>
+        <div class="mainbody">
+            <div class="review_comments">
+                <div>
+                    {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!} <span class="text-muted">posted at {{ $review->created_at }}</span>
+                </div>
+                <div>
+                    <p >{!! nl2br(e($review->content)) !!}</p>
+                </div>
             </div>
-            <div>
-                <p>{!! nl2br(e($review->content)) !!}</p>
-            </div>
-            <style type="text/css"
->#submit:hover {
+             
+              <div class="form-group">
+                  @if (Auth::id() == $review->user_id)
+                          {!! Form::model($review, ['route' => ['reviews.destroy', $review->id], 'method' => 'delete']) !!}
+                              <div class="submit">
+                                  <div id="submit_delete">
+                                      <input type="submit" value="Delete" id="button-delete"/>
+                                  </div>
+                              </div>
+                          {!! Form::close() !!}
+                  @endif
+              </div>
+          </div>
+  </li>
+@endforeach
+</ul>
+
+<style type="text/css">
+#submit:hover {
 color: #ffffff;
 
 }
@@ -36,19 +56,3 @@ color: #ffffff;
    font-size:30px;
 }
 </style>      
-             
-              <div class="form-group">
-                  @if (Auth::id() == $review->user_id)
-                          {!! Form::model($review, ['route' => ['reviews.destroy', $review->id], 'method' => 'delete']) !!}
-                              <div class="submit">
-                                  <div id="submit_delete">
-                                      <input type="submit" value="Delete" id="button-delete"/>
-                                  </div>
-                              </div>
-                          {!! Form::close() !!}
-                  @endif
-              </div>
-          </div>
-  </li>
-@endforeach
-</ul>
