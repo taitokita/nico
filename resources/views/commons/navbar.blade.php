@@ -39,7 +39,7 @@
 </li>
                 <li class="dropdown">                            
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                       <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+                       <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
                            Category                                
                            <span class="caret"></span>                  
                    </a>

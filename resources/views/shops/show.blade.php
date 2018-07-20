@@ -137,18 +137,21 @@
             <br>
             <br>
     @include('shops.favorite_button', ['shop' => $shop],['class' => 'btn'])
+            <br>
   
   <div class="form-group">
       {!! Form::open(['route' => 'reviews.store']) !!}
       {!! Form::hidden('shop_id', $shop->id) !!}
+             <div class="comment_text">
                <p class="text">
                  <textarea name="content" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Review Comment"></textarea>
                </p>
+             </div>
+        <div class="submit_comment">     
           <div class="submit">
-              <div id="submit_comment">
                   <input type="submit" value="Post" id="button-blue"/>
-              </div>
           </div>
+        </div>
       {!! Form::close() !!}
   </div>
   

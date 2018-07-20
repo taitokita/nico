@@ -30,11 +30,11 @@
     <div id="form-div">
       <form class="form" id="form1">
     <br>
-       <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input"name="name" placeholder="Shopname" id="name" />
+       <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input"name="name" placeholder="Shopname" id="name" value="{{$shop->name}}"/>
     <br>
     <br>
         <p class="text">
-           <textarea name="content" class="validate[required,length[6,300]] feedback-input" id="comment"  placeholder="Content"></textarea>
+           <textarea name="content" class="validate[required,length[6,300]] feedback-input" id="comment"  placeholder="Content">{{$shop->content}}</textarea>
         </p>
 
          <select  name="tag_id" type="text" class="form-control selectpicker"style="font-size: 18px" >
