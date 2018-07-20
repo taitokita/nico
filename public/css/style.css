@@ -31,12 +31,12 @@ footer {
     margin-top: -20px;
     margin-bottom: 20px;
     width: 100%;
-    height: 300px;
+    height: auto; max-height:300px;
     background-color: rgba(0,0,0,0.4) center center no-repeat;
     background-size: cover;
 }
 .cover .cover-inner {
-    height: 100%;
+    /*height: 100%;*/
     margin: auto;
     display: table;
 }
@@ -74,13 +74,13 @@ footer {
     margin-top: -20px;
     margin-bottom: 20px;
     width: 100%;
-    height: 300px;
+    height: auto; max-height:300px;
     /* showの写真 */
     background-color:  ;
     background-size: cover;
 }
 .cover1 .cover-inner {
-    height: 100%;
+    /*height: 100%;*/
     margin: auto;
     display: table;
 }
@@ -128,19 +128,30 @@ footer {
 
 .imageshow{
     max-width: 100%;
-    height: auto;
+    height: auto; 
+}
+.imageshow{
+ display: inline-block;
+    background-color: #ccc;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 5px;
+    width: 100%;
+    height: auto; 
+    border: 1px solid #ccc;
+    background-size: contain;
 }
 
 .cover2 {
     margin-top: -20px;
     margin-bottom: 20px;
     width: 100%;
-    height: 300px;
+    height: auto; max-height:300px;
     background-color: rgba(0,0,0,0.4) center center no-repeat;
     background-size: cover;
 }
 .cover2 .cover-inner {
-    height: 100%;
+    /*height: 100%;*/
     margin: auto;
     display: table;
 }
@@ -152,13 +163,16 @@ footer {
     width: 100%;
 }
 .cover2 .cover-inner .cover-contents h1 {
-    margin: 0 0 20px 0;
-    color: #fff;
-    font-weight: bold;
-    letter-spacing: 0.15em;
-    font-family: 'Kaushan Script', cursive;
-    text-shadow: 5px 5px 1px #999999;
-
+  margin: 0 0 20px 0;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  font-family: 'Chonburi', cursive;
+  margin : 1em 0 1.5em ;
+  padding : 0.3em 0.5em ;
+  line-height : 1.8 ;
+  border-bottom : solid 4px #fff ;
+  border-left : solid 15px #fff ;
 }
 .cover2 .btn-success {
     background-color: #ed486f;
@@ -169,12 +183,12 @@ footer {
     margin-top: -20px;
     margin-bottom: 20px;
     width: 100%;
-    height: 300px;
+    height: auto; max-height:300px;
     background-color: rgba(0,0,0,0.4) center center no-repeat;
     background-size: cover;
 }
 .cover3 .cover-inner {
-    height: 100%;
+    /*height: 100%;*/
     margin: auto;
     display: table;
 }
@@ -203,12 +217,12 @@ footer {
     margin-top: -20px;
     margin-bottom: 20px;
     width: 100%;
-    height: 300px;
+    height: auto; max-height:300px;
     background-color: rgba(0,0,0,0.4) center center no-repeat;
     background-size: cover;
 }
 .cover4 .cover-inner {
-    height: 100%;
+    /*height: 100%;*/
     margin: auto;
     display: table;
 }
@@ -253,12 +267,12 @@ footer {
     margin-top: -20px;
     margin-bottom: 20px;
     width: 100%;
-    height: 300px;
+    height: auto; max-height:300px;
     background-color: rgba(0,0,0,0.4) center center no-repeat;
     background-size: cover;
 }
 .cover6 .cover-inner {
-    height: 100%;
+    /*height: 100%;*/
     margin: auto;
     display: table;
 }
@@ -270,11 +284,18 @@ footer {
     width: 100%;
 }
 .cover6 .cover-inner .cover-contents h1 {
-    margin: 0 0 20px 0;
-    color: #fff;
-    font-weight: bold;
-    letter-spacing: 0.15em;
-    text-shadow: 5px 5px 1px #999999;
+  margin: 0 0 20px 0;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  text-shadow: 5px 5px 1px #999999;
+  font-family: 'Cormorant SC', serif;
+  margin : 1em 0 1.5em ;
+  padding : 0em 2.5em ;
+  line-height : 1.8 ;
+  border-bottom : solid 4px #fff ;
+  border-left : solid 15px #fff ;
+  font-size: 50px;
 }
 .cover6 .btn-success {
     background-color: #ed486f;
@@ -295,7 +316,7 @@ footer {
 }
 .mainbody9 {
  position: relative;
- height: auto;
+ height: auto; max-height:300px;
  background: linear-gradient(to bottom, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
  transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
  transform: scale();
@@ -304,12 +325,12 @@ footer {
     margin-top: -20px;
     margin-bottom: 20px;
     width: 100%;
-    height: 300px;
+    height: auto; max-height:300px;
     background-color: rgba(0,0,0,0.4) center center no-repeat;
     background-size: cover;
 }
 .cover10 .cover-inner {
-    height: 100%;
+    /*height: 100%;*/
     margin: auto;
     display: table;
 }
@@ -321,13 +342,17 @@ footer {
     width: 100%;
 }
 .cover10 .cover-inner .cover-contents h1 {
-    margin: 0 0 20px 0;
-    color: #fff;
-    font-weight: bold;
-    letter-spacing: 0.15em;
-    font-family: 'Caveat', cursive;
-    text-shadow: 5px 5px 1px #999999;
-
+  margin: 0 0 20px 0;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  font-family: 'Limelight', cursive;
+  font-size: 50px;
+  margin : 1em 0 1.5em ;
+  padding : 0em 0.5em ;
+  line-height : 1.8 ;
+  border-bottom : solid 4px #fff ;
+  border-left : solid 15px #fff ; 
 }
 
 /*ranking review*/
@@ -350,12 +375,12 @@ footer {
     margin-top: -20px;
     margin-bottom: 20px;
     width: 100%;
-    height: 300px;
+    height: auto; max-height:300px;
     background-color: rgba(0,0,0,0.4) center center no-repeat;
     background-size: cover;
 }
 .cover11 .cover-inner {
-    height: 100%;
+    /*height: 100%;*/
     margin: auto;
     display: table;
 }
@@ -367,13 +392,17 @@ footer {
     width: 100%;
 }
 .cover11 .cover-inner .cover-contents h1 {
-    margin: 0 0 20px 0;
-    color: #fff;
-    font-weight: bold;
-    letter-spacing: 0.15em;
-    font-family: 'Caveat', cursive;
-    text-shadow: 5px 5px 1px #999999;
-
+ margin: 0 0 20px 0;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  font-family: 'Limelight', cursive;
+  font-size: 50px;
+  margin : 1em 0 1.5em ;
+  padding : 0em 0.5em ;
+  line-height : 1.8 ;
+  border-bottom : solid 4px #fff ;
+  border-left : solid 15px #fff ; 
 }
 
 .dropdown-toggle{
@@ -457,8 +486,9 @@ footer {
     margin-bottom: 20px;
 }
 .user-profile .name h1 {
-    text-shadow: 1px 1px 1px #fff;
-    font-weight: bold;
+  text-shadow: 1px 1px 1px #fff;
+  font-family: 'Fredericka the Great', cursive;
+  color: #fff;
 }
 .user-profile .status ul {
     margin: 0 auto 10px;
@@ -1501,6 +1531,11 @@ height: 3rem;
     border: solid 2px #e6e6fa;
     border-radius: 3px;
     transition: .4s;
+    max-width: auto;
+}
+.hidden_box_shop_location{
+ max-width: 100%;
+ word-wrap: break-word;
 }
 
 .hidden_box_shop:hover {
@@ -1827,12 +1862,12 @@ span.filter-option.pull-left {
 .heading-correct-pronounciation {
   margin: auto;
   text-align: center;
-  position: relative;
+  /*position: relative;*/
 }
 h1 {
   color: #fff;
   font-family: 'Cardo', serif;
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: normal;
   font-style: italic;
   letter-spacing: 0.1em;
@@ -1866,4 +1901,48 @@ em::after {
   letter-spacing: 0.07em;
   font-size: 1em;
   display: block;
+}
+
+#submit:hover {
+color: #e6e6fa;
+
+}
+#button-blue:hover{
+ background-color: #e6e6fa;
+ color: #808080;
+}
+
+#button-blue{
+ background-color: rgba(0,0,0,0);
+ color: #e6e6fa;
+ font-family: 'Teko', sans-serif;
+ font-size:50px;
+}
+#button_delete_shop:hover{
+ background-color: #b71717;
+ color: #ffffff;
+}
+#button_delete_shop{
+    float:left;
+/* background-color: #B83F3D;*/
+/* color: #e6e6fa;*/
+/* font-family: 'Teko', sans-serif;*/
+/* font-size:20px;*/
+/* height:35px;*/
+ width:125px;
+/* border:solid 1px #fff;*/
+}
+.button_edit {
+    float:left;
+/* background-color: #961496;*/
+/* color: #e6e6fa;*/
+/* font-family: 'Teko', sans-serif;*/
+/* font-size:20px;*/
+/* height:35px;*/
+width:125px;
+/* border:solid 1px #fff;*/
+}
+.button_edit:hover{
+ background-color: #188291;
+ color: #ffffff;
 }

@@ -18,10 +18,17 @@
                 <h1>Shop index</h1>
                 <div class="searchform" class="col-md-3 col-sm-4 col-xs-6">
                     <form method="get" action="{{route('shops.index')}}">
-                        <input type="text" name="name" class="form-control" placeholder="keyword" class="search1">
-                        <input type="hidden" name="maction" value="search">
-                        <input type="submit" value="search" class="btn btn-secondery" class="search2">
-                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                        <div style="display:inline-block">
+                       <input type="text" name="name" class="form-control" placeholder="keyword" class="search1">
+                       <input type="hidden" name="maction" value="search">
+                       </div>
+                       <div style="display:inline-block">
+                        <p>  <button class="btn btn-info btn-md">
+                             <span class="glyphicon glyphicon-search"></span>  
+                           </button>
+                            </p>
+                             </div>
+                       <input type="hidden" name="_token" value="{{csrf_token()}}">
                     </form>
                 </div>
             </div>

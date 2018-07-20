@@ -12,50 +12,32 @@
     </div>
     <div class="mainbody2">
 @section('content')
+   <div class="cover">
+            <div class="cover-inner">
+                <div class="cover-contents">
+                    
+                        <div class="plate">
+                          <p class="script"><span>u gonna</span></p>
+                          <p class="shadow text2">Edit</p>
+                          <p class="script"><span>Nico by TK kingdom</span></p>
+                        </div>
+                    </div>
+              </div>
+          </div>
     
 {!! Form::model($shop, ['route' => ['shops.update', $shop->id], 'method' => 'put','files' => 'true', 'enctype'=>'multipart/form-data']) !!}
-<center>
-<h1>Edit {{ $shop->name }}'s page </h1>
-</center>
-<div id="form-main">
- <div id="form-div">
-   <form class="form" id="form1">
-     <form action="./filesend.cgi" method="post" enctype="multipart/form-data">
-       <label style="width:100%;">
-         
-         <span class="filelabel" title="Photo select">
-           <img src="http://icooon-mono.com/i/icon_16250/icon_162500_256.png" width="30" height="30" >
-           &nbsp;&nbsp;Photo
-         </span>
-       <input type="file" name="photo[]" id="filesend" multiple="multiple">
-       </label>
- 
-     </form>
+   <div id="form-main">
+    <div id="form-div">
+      <form class="form" id="form1">
     <br>
-    <br>
-   
-
-
        <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input"name="name" placeholder="Shopname" id="name" />
     <br>
-    <br> <style type="text/css">
-   
-.bootstrap-select {
- display: block;
- width: 100%;
- height:55px;
- }
+    <br>
+        <p class="text">
+           <textarea name="content" class="validate[required,length[6,300]] feedback-input" id="comment"  placeholder="Content"></textarea>
+        </p>
 
-.glyphicon.glyphicon-tag{
-font-size:30px;
-}
-
-.btn {
- height:55px;
- margin-top: 0px;
-}
- </style>
-     <select  name="tag_id" type="text" class="form-control selectpicker"style="font-size: 18px" >
+         <select  name="tag_id" type="text" class="form-control selectpicker"style="font-size: 18px" >
    
                            <option class="content" data-icon="glyphicon-tag">&nbsp;&nbsp;Category</option>
                            　<option value="1" name="1">Japanese</option>
@@ -68,18 +50,29 @@ font-size:30px;
             				<option value="8" name="8">Ethnic</option>
             				<option value="9" name="9">Izakaya・Bar</option>
             				<option value="10" name="10">Café</option>
-     </select>
+         </select>
+         <br>
+         <br>
 
-    <br>
-    <br>
-    <br>
-   
-     
-     <p class="text">
-       <textarea name="content" class="validate[required,length[6,300]] feedback-input" id="comment"  placeholder="Content"></textarea>
-     </p>
-     
-     
+            <form action="./filesend.cgi" method="post" enctype="multipart/form-data">
+              <p>
+                 <label style="width:100%;">
+                     
+                    <span class="filelabel" >
+                       <img src="http://icooon-mono.com/i/icon_16250/icon_162500_256.png" width="30" height="30" >&nbsp;&nbsp;Photo
+                       <span id="selectednum"></span>
+                    </span>
+                    <input type="file" name="photo[]" id="filesend" multiple=",multiple" multiple accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png" class="file">
+                    <span id="previewbox"></span>
+                 </label>
+                 <span id="previewbox"></span>
+                 
+              </p>
+            </form>
+            
+        <br>
+        <br>
+
      <div class="submit">
        <input type="submit" value="Edit" id="button-black"/>
        
@@ -87,6 +80,69 @@ font-size:30px;
      </div>
    </form>
  </div>
-　{!! Form::close() !!}
 </div>
+{!! Form::close() !!}
+　
+    <style type="text/css">
+        .bootstrap-select {
+         display: block;
+         width: 100%;
+         height:55px;
+         }
+        
+        .glyphicon.glyphicon-tag{
+        font-size:30px;
+        }
+        
+        .btn {
+         height:55px;
+         margin-top: 0px;
+        }
+    </style>
+　
+　<script type="text/javascript">
+            document.getElementById("filesend").addEventListener('change', function(e) {
+              var files = e.target.files;
+              previewUserFiles(files);
+            });
+            // ▼②選択画像をプレビュー
+            function previewUserFiles(files) {
+              // 一旦リセットする
+              resetPreview();
+              // 選択中のファイル1つ1つを対象に処理する
+              for (var i = 0; i < files.length; i++) {
+                 // i番目のファイル情報を得る
+                 var file = files[i];
+                 // 選択中のファイルが画像かどうかを判断
+                 if( file.type.indexOf("image") < 0 ) {
+                    /* 画像以外なら無視 */
+                    continue;
+                 }
+                 // ファイル選択ボタンのラベルに選択個数を表示
+                 document.getElementById("selectednum").innerHTML = (i+1) + " selected";
+                 // 画像プレビュー用のimg要素を動的に生成する
+                 var img = document.createElement("img");
+                 img.classList.add("previewImage");
+                 img.file = file;
+                 img.height = 100;   // プレビュー画像の高さ
+                 // 生成したimg要素を、プレビュー領域の要素に追加する
+                 document.getElementById('previewbox').appendChild(img);
+                 // 画像をFileReaderで非同期に読み込み、先のimg要素に紐付けする
+                 var reader = new FileReader();
+                 reader.onload = (function(tImg) { return function(e) { tImg.src = e.target.result; }; })(img);
+                 reader.readAsDataURL(file);
+              }
+            }
+            // ▼③プレビュー領域をリセット
+            function resetPreview() {
+              // プレビュー領域に含まれる要素のすべての子要素を削除する
+              var element = document.getElementById("previewbox");
+              while (element.firstChild) {
+                 element.removeChild(element.firstChild);
+              }
+              // ファイル選択ボタンのラベルをデフォルト状態に戻す
+              document.getElementById("selectednum").innerHTML = "No file";
+            }
+        </script>
+
 @endsection
