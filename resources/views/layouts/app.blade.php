@@ -22,6 +22,18 @@
         <link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace" rel="stylesheet">
        <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
        <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
+       
+       
+       <style>
+        @import url('https://fonts.googleapis.com/css?family=Limelight');
+        @import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
+        @import url('https://fonts.googleapis.com/css?family=Chonburi');
+        @import url('https://fonts.googleapis.com/css?family=Condiment');
+        @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+        @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
+        @import url('https://fonts.googleapis.com/css?family=Cormorant+SC');
+        </style>
+        
         
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
