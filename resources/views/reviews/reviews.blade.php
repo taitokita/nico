@@ -2,11 +2,11 @@
 @foreach ($reviews as $review)
     <?php $user = $review->user; ?>
     
-    <li class="media">
+    <li class="media1">
         <div class="media-left">
             <img src="{{ Gravatar::src($user->password, 100) . '&d=mm' }}" alt="" class="img-circle">
         </div>
-        <div class="mainbody">
+        <div class="media-body">
             <div class="review_comments">
                 <div>
                     {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!} <span class="text-muted">posted at {{ $review->created_at }}</span>
@@ -32,6 +32,8 @@
 @endforeach
 </ul>
 
+
+
 <style type="text/css">
 #submit:hover {
 color: #ffffff;
@@ -54,5 +56,8 @@ color: #ffffff;
    color: #e6e6fa;
    font-family: 'Teko', sans-serif;
    font-size:30px;
+}
+..media-left{
+    float:left;
 }
 </style>      

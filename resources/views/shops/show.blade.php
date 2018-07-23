@@ -34,11 +34,11 @@
     </div>
 <body>
      <div class=imageshowflame>
-        <!--@if(empty($shop->path))-->
+        @if(empty($shop->path))
        
-        <!--@else-->
+        @else
        
-        <!--@endif-->
+        @endif
        @foreach($images as $image)
        <div style='display:inline-block;'><img class=imageshow src="{{asset('item/'.$image->url) }}"></div>
    
@@ -155,11 +155,13 @@
       {!! Form::close() !!}
   </div>
   
-  <div>
-      @if(count($reviews) > 0)
-        @include('reviews.reviews', ['reviews' => $reviews])
-      @endif
-  </div>
+    <div>
+        @if (count($reviews) > 0)
+                    @include('reviews.reviews', ['reviews' => $reviews])
+        @endif
+    </div>
+      
+
   
 </body>
 @endsection

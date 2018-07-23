@@ -162,17 +162,26 @@ footer {
     width: 100%;
 }
 .cover2 .cover-inner .cover-contents h1 {
-  margin: 0 0 20px 0;
   color: #fff;
-  font-weight: bold;
-  letter-spacing: 0.15em;
-  font-family: 'Chonburi', cursive;
-  margin : 1em 0 1.5em ;
-  padding : 0.3em 0.5em ;
-  line-height : 1.8 ;
-  border-bottom : solid 4px #fff ;
-  border-left : solid 15px #fff ;
+  font-size:50px;
+  font-family: 'Cormorant SC', serif;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 70px #fff, 0 0 80px #fff, 0 0 100px #fff, 0 0 150px #fff;
+ position:relative;
+display:inline-block;
 }
+.cover2 .cover-inner .cover-contents h1:before, .cover2 .cover-inner .cover-contents h1:after{
+content:"";
+display:block;
+width:200px;
+height:4px;
+border-top:1px solid #fff;
+border-bottom:1px solid #fff;
+position:absolute;
+top:50%;
+margin-top:-2px;
+}
+.cover2 .cover-inner .cover-contents h1:before{left:-224px;}
+.cover2 .cover-inner .cover-contents h1:after{right:-224px;}
 .cover2 .btn-success {
     background-color: #ed486f;
     border-color: #ed486f;
@@ -1793,7 +1802,7 @@ span.filter-option.pull-left {
 /*head plan*/
 
 .plate {
-  max-width: 100%;
+  width: 100%;
   margin: 10% auto;
 }
 .shadow {
@@ -1842,7 +1851,7 @@ span.filter-option.pull-left {
   font-size: 60px;
 }
 .text2 {
-  font-size: 169px;
+  font-size: 100px;
 }
 .text3 {
   font-size: 100px;

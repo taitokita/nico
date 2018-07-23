@@ -20,7 +20,7 @@ class ReviewsController extends Controller
         $data = [];
         if (\Auth::check()) {
             $user = \Auth::user();
-            $reviews = $user->feed_reviews()->orderBy('created_at', 'asc')->paginate(100);
+            $reviews = $user->feed_reviews()->orderBy('created_at', 'desc')->paginate(100);
 
             $data = [
                 'user' => $user,
