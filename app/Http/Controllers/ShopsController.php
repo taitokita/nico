@@ -276,4 +276,37 @@ class ShopsController extends Controller
         }
         return redirect('/');
     }
+    
+    
+    public function add(Request $request, $id)
+    {
+        if($request->file('photo')!=null && count($request->file('photo'))>0){
+            foreach((array)$request->file('photo') as $gyu){
+              $filepath = $gyu->store('photo');
+            }
+       }
+       else {
+        $filepath ='';
+        }
+        
+
+        $shop = Shop::find($id);
+        $shop->path = $filepath; 
+        $shop->save();
+        
+        if($request->file('photo')!=null && count($request->file('photo'))>0){
+        foreach((array)$request->file('photo') as $gyu){
+           $filepath = $gyu->store('photo');
+           $i = new Image;
+           $i->shops_id = $shop->id;
+           $i->url  = $filepath;
+           $i->save();
+        }}
+        
+        return redirect('/');
+
+    }
 }
+
+
+

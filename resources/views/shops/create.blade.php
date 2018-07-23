@@ -36,7 +36,7 @@
               <br>
               <br>
               <p class="text">
-                 <textarea name="content" class="validate[required,length[6,300]] feedback-input" id="comment"  placeholder="Content"></textarea>
+                 <textarea name="content" class="validate[required,length[6,300]] feedback-input" id="comment"  placeholder="Detail of the Shop"></textarea>
               </p>
 
                <select  name="tag_id" type="text" class="form-control selectpicker"style="font-size: 18px" >

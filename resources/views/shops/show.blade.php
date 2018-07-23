@@ -34,15 +34,96 @@
     </div>
 <body>
      <div class=imageshowflame>
-        @if(empty($shop->path))
-       
-        @else
-       
-        @endif
-       @foreach($images as $image)
-       <div style='display:inline-block;'><img class=imageshow src="{{asset('item/'.$image->url) }}"></div>
-   
-        @endforeach  
+      @if(empty($shop->path))
+     
+      @else
+     
+      @endif
+     
+      <div id="carousel-example" class="carousel slide" data-ride="carousel" data-inteerval="7000">
+                  <!-- インジケーターの設置。下部の○●ボタン。 -->
+                  <ol class="carousel-indicators">
+                    <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example" data-slide-to="1"></li>
+                    <li data-target="#carousel-example" data-slide-to="2"></li>
+                  </ol>
+
+                  <!-- スライドの内容 -->
+                  <div class="carousel-inner">
+            
+
+                    @foreach($images as $k => $image)
+                    <?php
+                    
+                    if($k == 0) {
+                       $opt = "active"; 
+                    } else {
+                       $opt = ""; 
+                    }
+                    ?>
+                    <div class="item {{$opt}}">
+                      <img src="{{asset('item/'.$image->url)}}" alt="">
+                    </div>
+                    @endforeach
+                    
+                  </div>
+
+                  <!-- 左右の移動ボタン -->
+                  <a class="left carousel-control" href="#carousel-example" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  </a>
+                  <a class="right carousel-control" href="#carousel-example" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  </a>
+                </div>
+
+<script type="text/javascript">
+document.getElementById("filesend").addEventListener('change', function(e) {
+  var files = e.target.files;
+  previewUserFiles(files);
+});
+// ▼②選択画像をプレビュー
+function previewUserFiles(files) {
+  // 一旦リセットする
+  resetPreview();
+  // 選択中のファイル1つ1つを対象に処理する
+  for (var i = 0; i < files.length; i++) {
+     // i番目のファイル情報を得る
+     var file = files[i];
+     // 選択中のファイルが画像かどうかを判断
+     if( file.type.indexOf("image") < 0 ) {
+        /* 画像以外なら無視 */
+        continue;
+     }
+     // ファイル選択ボタンのラベルに選択個数を表示
+     document.getElementById("selectednum").innerHTML = (i+1) + " selected";
+     // 画像プレビュー用のimg要素を動的に生成する
+     var img = document.createElement("img");
+     img.classList.add("previewImage");
+     img.file = file;
+     img.height = 100;   // プレビュー画像の高さ
+     // 生成したimg要素を、プレビュー領域の要素に追加する
+     document.getElementById('previewbox').appendChild(img);
+     // 画像をFileReaderで非同期に読み込み、先のimg要素に紐付けする
+     var reader = new FileReader();
+     reader.onload = (function(tImg) { return function(e) { tImg.src = e.target.result; }; })(img);
+     reader.readAsDataURL(file);
+  }
+}
+// ▼③プレビュー領域をリセット
+function resetPreview() {
+  // プレビュー領域に含まれる要素のすべての子要素を削除する
+  var element = document.getElementById("previewbox");
+  while (element.firstChild) {
+     element.removeChild(element.firstChild);
+  }
+  // ファイル選択ボタンのラベルをデフォルト状態に戻す
+  document.getElementById("selectednum").innerHTML = "No file";
+}
+</script>
+
+     
+  </div>
  
    
    <div class="form-group">
@@ -104,32 +185,39 @@
             <br>
     @include('shops.favorite_button', ['shop' => $shop],['class' => 'btn'])
             <br>
-            
-    {!! Form::model($shop, ['route' => ['shops.update', $shop->id], 'method' => 'put','files' => 'true', 'enctype'=>'multipart/form-data']) !!}
-        <form action="./filesend.cgi" method="post" enctype="multipart/form-data">
-              
-                 <label class="addphoto">
-                     
-                    <span class="filelabel" >
-                       <img src="http://icooon-mono.com/i/icon_16250/icon_162500_256.png" width="30" height="30" >&nbsp;&nbsp;Add Photo
+            <br>
+        
+    
+    <div class="form-group">
+       {!! Form::model($shop, ['route' => ['shops.update', $shop->id], 'method' => 'put','files' => 'true', 'enctype'=>'multipart/form-data']) !!}
+           <form action="./filesend.cgi" method="post" enctype="multipart/form-data">
+             <div class="add_photo">
+                 <label class="filelabel2">
+                    <span class="addicons">
+                       <img src="http://icooon-mono.com/i/icon_16250/icon_162500_256.png" width="30" height="30" >&nbsp;&nbsp;Photo
                        <span id="selectednum"></span>
                     </span>
                     <input type="file" name="photo[]" id="filesend" multiple=",multiple" multiple accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png" class="file">
-                    <span id="previewbox"></span>
+                    
                  </label>
-                 <span id="previewbox"></span>
                  
-              
-            </form>
-            <div class="submit-1">
-               <input type="submit" value="Post" id="button-add"/>
-               <div class="ease-1"></div>
-             </div>
              
- 
-{!! Form::close() !!}
+            
+            <div class="submit_add">     
+              <div class="submit">
+                      <input type="submit" value="Post" id="button-add"/>
+              </div>
+            </div>
+        </div>
+      {!! Form::close() !!}
+      <span id="previewbox"></span>
+    </div>
+  
 
-            <br>
+        <div></div>
+            
+             <br>
+             <br>
         
   <div class="form-group">
       {!! Form::open(['route' => 'reviews.store']) !!}
@@ -154,8 +242,65 @@
     </div>
       
 
-  </div>
 
 </body>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+            document.getElementById("filesend").addEventListener('change', function(e) {
+              var files = e.target.files;
+              previewUserFiles(files);
+            });
+            // ▼②選択画像をプレビュー
+            function previewUserFiles(files) {
+              // 一旦リセットする
+              resetPreview();
+              // 選択中のファイル1つ1つを対象に処理する
+              for (var i = 0; i < files.length; i++) {
+                 // i番目のファイル情報を得る
+                 var file = files[i];
+                 // 選択中のファイルが画像かどうかを判断
+                 if( file.type.indexOf("image") < 0 ) {
+                    /* 画像以外なら無視 */
+                    continue;
+                 }
+                 // ファイル選択ボタンのラベルに選択個数を表示
+                 document.getElementById("selectednum").innerHTML = (i+1) + " selected";
+                 // 画像プレビュー用のimg要素を動的に生成する
+                 var img = document.createElement("img");
+                 img.classList.add("previewImage");
+                 img.file = file;
+                 img.height = 100;   // プレビュー画像の高さ
+                 // 生成したimg要素を、プレビュー領域の要素に追加する
+                 document.getElementById('previewbox').appendChild(img);
+                 // 画像をFileReaderで非同期に読み込み、先のimg要素に紐付けする
+                 var reader = new FileReader();
+                 reader.onload = (function(tImg) { return function(e) { tImg.src = e.target.result; }; })(img);
+                 reader.readAsDataURL(file);
+              }
+            }
+            // ▼③プレビュー領域をリセット
+            function resetPreview() {
+              // プレビュー領域に含まれる要素のすべての子要素を削除する
+              var element = document.getElementById("previewbox");
+              while (element.firstChild) {
+                 element.removeChild(element.firstChild);
+              }
+              // ファイル選択ボタンのラベルをデフォルト状態に戻す
+              document.getElementById("selectednum").innerHTML = "No file";
+            }
+        </script>
+
+
+
+
+
+
 @endsection
 
