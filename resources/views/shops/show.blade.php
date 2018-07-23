@@ -42,40 +42,6 @@
        @foreach($images as $image)
        <div style='display:inline-block;'><img class=imageshow src="{{asset('item/'.$image->url) }}"></div>
    
-        <!--   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">-->
-        <!--      <ol class="carousel-indicators">-->
-        <!--        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>-->
-        <!--        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>-->
-        <!--        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li-->
-        <!--        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>-->
-        <!--        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>-->
-        <!--      </ol>-->
-        <!--  <div class="carousel-inner">-->
-        <!--        <div class="carousel-item active">-->
-        <!--          <img  class="d-block w-100" src="{{asset('item/'.$image->url) }}" alt="First slide">-->
-        <!--        </div>-->
-        <!--        <div class="carousel-item">-->
-        <!--          <img  class="d-block w-100" src="{{asset('item/'.$image->url) }}" alt="Second slide">-->
-        <!--        </div>-->
-        <!--        <div class="carousel-item">-->
-        <!--          <img  class="d-block w-100" src="{{asset('item/'.$image->url) }}" alt="Third slide">-->
-        <!--        </div>-->
-        <!--        <div class="carousel-item">-->
-        <!--          <img  class="d-block w-100" src="{{asset('item/'.$image->url) }}" alt="Forth slide">-->
-        <!--        </div>-->
-        <!--        <div class="carousel-item">-->
-        <!--          <img  class="d-block w-100" src="{{asset('item/'.$image->url) }}" alt="Fifth slide">-->
-        <!--        </div>-->
-        <!--  </div>-->
-        <!--      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">-->
-        <!--        <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
-        <!--        <span class="sr-only">Previous</span>-->
-        <!--      </a>-->
-        <!--      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">-->
-        <!--        <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
-        <!--        <span class="sr-only">Next</span>-->
-        <!--      </a>-->
-        <!--</div>-->
         @endforeach  
  
    
@@ -138,7 +104,33 @@
             <br>
     @include('shops.favorite_button', ['shop' => $shop],['class' => 'btn'])
             <br>
-  
+            
+    {!! Form::model($shop, ['route' => ['shops.update', $shop->id], 'method' => 'put','files' => 'true', 'enctype'=>'multipart/form-data']) !!}
+        <form action="./filesend.cgi" method="post" enctype="multipart/form-data">
+              
+                 <label class="addphoto">
+                     
+                    <span class="filelabel" >
+                       <img src="http://icooon-mono.com/i/icon_16250/icon_162500_256.png" width="30" height="30" >&nbsp;&nbsp;Add Photo
+                       <span id="selectednum"></span>
+                    </span>
+                    <input type="file" name="photo[]" id="filesend" multiple=",multiple" multiple accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png" class="file">
+                    <span id="previewbox"></span>
+                 </label>
+                 <span id="previewbox"></span>
+                 
+              
+            </form>
+            <div class="submit-1">
+               <input type="submit" value="Post" id="button-add"/>
+               <div class="ease-1"></div>
+             </div>
+             
+ 
+{!! Form::close() !!}
+
+            <br>
+        
   <div class="form-group">
       {!! Form::open(['route' => 'reviews.store']) !!}
       {!! Form::hidden('shop_id', $shop->id) !!}
@@ -162,6 +154,8 @@
     </div>
       
 
-  
+  </div>
+
 </body>
 @endsection
+
