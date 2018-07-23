@@ -45,6 +45,8 @@ class ShopsController extends Controller
             }
         }
         else{
+              $tag = Tag::find($_GET['maction']??0);
+            
               $japanese = Shop::where('tag_id', $_GET['maction'])->get();
                       $searchResultWithShop = $japanese;
 
@@ -91,6 +93,7 @@ class ShopsController extends Controller
             'tagslabel' =>$tagLabel,
             'name' => "",
             'search_result' =>  $searchResultWithShop,
+            'tag' =>$tag,
             $data ]);
 
 

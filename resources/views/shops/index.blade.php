@@ -15,7 +15,7 @@
     <div class="cover2">
         <div class="cover-inner">
             <div class="cover-contents">
-                <h1>Shop index</h1>
+                <h1>{{ $tag->name }} Index</h1>
                 <div class="searchform" class="col-md-3 col-sm-4 col-xs-6">
                     <form method="get" action="{{route('shops.index')}}">
                         <div style="display:inline-block">

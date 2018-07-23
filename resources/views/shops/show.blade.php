@@ -41,12 +41,7 @@
       @endif
      
       <div id="carousel-example" class="carousel slide" data-ride="carousel" data-inteerval="7000">
-                  <!-- インジケーターの設置。下部の○●ボタン。 -->
-                  <ol class="carousel-indicators">
-                    <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example" data-slide-to="1"></li>
-                    <li data-target="#carousel-example" data-slide-to="2"></li>
-                  </ol>
+                  
 
                   <!-- スライドの内容 -->
                   <div class="carousel-inner">
@@ -77,54 +72,12 @@
                   </a>
                 </div>
 
-<script type="text/javascript">
-document.getElementById("filesend").addEventListener('change', function(e) {
-  var files = e.target.files;
-  previewUserFiles(files);
-});
-// ▼②選択画像をプレビュー
-function previewUserFiles(files) {
-  // 一旦リセットする
-  resetPreview();
-  // 選択中のファイル1つ1つを対象に処理する
-  for (var i = 0; i < files.length; i++) {
-     // i番目のファイル情報を得る
-     var file = files[i];
-     // 選択中のファイルが画像かどうかを判断
-     if( file.type.indexOf("image") < 0 ) {
-        /* 画像以外なら無視 */
-        continue;
-     }
-     // ファイル選択ボタンのラベルに選択個数を表示
-     document.getElementById("selectednum").innerHTML = (i+1) + " selected";
-     // 画像プレビュー用のimg要素を動的に生成する
-     var img = document.createElement("img");
-     img.classList.add("previewImage");
-     img.file = file;
-     img.height = 100;   // プレビュー画像の高さ
-     // 生成したimg要素を、プレビュー領域の要素に追加する
-     document.getElementById('previewbox').appendChild(img);
-     // 画像をFileReaderで非同期に読み込み、先のimg要素に紐付けする
-     var reader = new FileReader();
-     reader.onload = (function(tImg) { return function(e) { tImg.src = e.target.result; }; })(img);
-     reader.readAsDataURL(file);
-  }
-}
-// ▼③プレビュー領域をリセット
-function resetPreview() {
-  // プレビュー領域に含まれる要素のすべての子要素を削除する
-  var element = document.getElementById("previewbox");
-  while (element.firstChild) {
-     element.removeChild(element.firstChild);
-  }
-  // ファイル選択ボタンのラベルをデフォルト状態に戻す
-  document.getElementById("selectednum").innerHTML = "No file";
-}
-</script>
+
 
      
   </div>
  
+     <br>
    
    <div class="form-group">
                   @if (Auth::id() == $shop->user_id)
@@ -185,7 +138,7 @@ function resetPreview() {
             <br>
     @include('shops.favorite_button', ['shop' => $shop],['class' => 'btn'])
             <br>
-            <br>
+            
         
     
     <div class="form-group">
@@ -216,8 +169,10 @@ function resetPreview() {
 
         <div></div>
             
-             <br>
-             <br>
+             <br><br>
+             
+             
+             
         
   <div class="form-group">
       {!! Form::open(['route' => 'reviews.store']) !!}
@@ -250,7 +205,50 @@ function resetPreview() {
 
 
 
-
+<script type="text/javascript">
+document.getElementById("filesend").addEventListener('change', function(e) {
+  var files = e.target.files;
+  previewUserFiles(files);
+});
+// ▼②選択画像をプレビュー
+function previewUserFiles(files) {
+  // 一旦リセットする
+  resetPreview();
+  // 選択中のファイル1つ1つを対象に処理する
+  for (var i = 0; i < files.length; i++) {
+     // i番目のファイル情報を得る
+     var file = files[i];
+     // 選択中のファイルが画像かどうかを判断
+     if( file.type.indexOf("image") < 0 ) {
+        /* 画像以外なら無視 */
+        continue;
+     }
+     // ファイル選択ボタンのラベルに選択個数を表示
+     document.getElementById("selectednum").innerHTML = (i+1) + " selected";
+     // 画像プレビュー用のimg要素を動的に生成する
+     var img = document.createElement("img");
+     img.classList.add("previewImage");
+     img.file = file;
+     img.height = 100;   // プレビュー画像の高さ
+     // 生成したimg要素を、プレビュー領域の要素に追加する
+     document.getElementById('previewbox').appendChild(img);
+     // 画像をFileReaderで非同期に読み込み、先のimg要素に紐付けする
+     var reader = new FileReader();
+     reader.onload = (function(tImg) { return function(e) { tImg.src = e.target.result; }; })(img);
+     reader.readAsDataURL(file);
+  }
+}
+// ▼③プレビュー領域をリセット
+function resetPreview() {
+  // プレビュー領域に含まれる要素のすべての子要素を削除する
+  var element = document.getElementById("previewbox");
+  while (element.firstChild) {
+     element.removeChild(element.firstChild);
+  }
+  // ファイル選択ボタンのラベルをデフォルト状態に戻す
+  document.getElementById("selectednum").innerHTML = "No file";
+}
+</script>
 
 <script type="text/javascript">
             document.getElementById("filesend").addEventListener('change', function(e) {

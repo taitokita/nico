@@ -174,7 +174,7 @@ display:inline-block;
 .cover2 .cover-inner .cover-contents h1:before, .cover2 .cover-inner .cover-contents h1:after{
 content:"";
 display:block;
-width:200px;
+width:100px;
 height:4px;
 border-top:1px solid #fff;
 border-bottom:1px solid #fff;
@@ -2064,23 +2064,23 @@ color: #646464;
 }
 #button_delete_shop{
     float:left;
-/* background-color: #B83F3D;*/
-/* color: #e6e6fa;*/
-/* font-family: 'Teko', sans-serif;*/
+ background-color: rgba(0,0,0,0);
+ color: #e6e6fa;
+ font-family: 'Teko', sans-serif;
 /* font-size:20px;*/
 /* height:35px;*/
  width:125px;
-/* border:solid 1px #fff;*/
+ border:solid 0.5px #fff;
 }
 .button_edit {
     float:left;
-/* background-color: #961496;*/
-/* color: #e6e6fa;*/
-/* font-family: 'Teko', sans-serif;*/
+ background-color: rgba(0,0,0,0);
+ color: #e6e6fa;
+ font-family: 'Teko', sans-serif;
 /* font-size:20px;*/
 /* height:35px;*/
 width:125px;
-/* border:solid 1px #fff;*/
+ border:solid 0.5px #fff;
 }
 .button_edit:hover{
  background-color: #188291;
