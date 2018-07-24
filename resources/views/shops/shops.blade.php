@@ -9,7 +9,9 @@
                         </div>
                         
                         <div class="panel-body">
-                            <h3 class="shop-title">{!! link_to_route('shops.show', $shop->name, ['name' => $shop->id]) !!}</h>
+                            <div class="hogehoge">
+                            <h3 class="hoge" style="width:100%">{!! link_to_route('shops.show', $shop->name, ['name' => $shop->id]) !!}</h>
+                            </div>
                         <br>
                         <div id="bottonshop" class="shop-favorite" class="buttons text-center ">
                                 @if (Auth::check())

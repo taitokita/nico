@@ -74,7 +74,8 @@ footer {
     margin-top: -20px;
     margin-bottom: 20px;
     width: 100%;
-    height: auto; max-height:300px;
+    height: auto; 
+    /*max-height:350px;*/
     /* showの写真 */
     background-color:  ;
     background-size: cover;
@@ -117,6 +118,7 @@ footer {
 }
 .imageshowflame{
     position: relative;
+    
 }
 .imageshowflame h1 {
   position: absolute;/*絶対配置*/
@@ -442,7 +444,7 @@ margin-top:-2px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Fjalla One', sans-serif;
     padding-top: 10%;
 }
 .shop-favorite{
@@ -1543,6 +1545,21 @@ height: 3rem;
     border-radius: 3px;
     transition: .4s;
     max-width: auto;
+    height:auto;
+    font-size:20px;
+    }
+
+.hidden_box_shop2 {
+   display: inline-block;
+   padding: 0.3em 1em;
+   text-decoration: none;
+   color: #e6e6fa;
+   border: solid 2px #e6e6fa;
+   border-radius: 3px;
+   transition: .4s;
+   width: 943px;
+   height:auto;
+   font-size:20px;
 }
 .hidden_box_shop_location{
  max-width: 100%;
@@ -1765,7 +1782,7 @@ span.filter-option.pull-left {
 
 .plate {
   width: 100%;
-  margin: auto;
+  margin: 10% auto;
   text-align: center;
 }
 .shadow {
@@ -1828,7 +1845,7 @@ span.filter-option.pull-left {
 
 /*showpage*/
 .sandbox-correct-pronounciation {
-  padding: 4em 0 10em 0;
+  padding: 4em 0 4em 0;
 }
 .heading-correct-pronounciation {
   margin: auto;
@@ -2219,3 +2236,34 @@ background-color: #188291;
  color: #ffffff;
  transition: .2s;
 }
+
+.hoge{
+ font-size:inherit;
+ word-wrap:break-word;
+}
+.shop-favorite{
+ text-align:center;
+}
+.panel-default{
+ height:500px;
+}
+.hogehoge{
+ height:50px;
+ 
+}
+.shop-favorite button{
+ width:100%;
+}
+.shop .panel-heading{
+ display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.shop .panel-heading img{
+
+ object-fit: cover;
+}
+
+
+
+

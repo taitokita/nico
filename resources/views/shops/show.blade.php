@@ -75,7 +75,7 @@
 
 
      
-  </div>
+  
  
      <br>
    
@@ -124,16 +124,26 @@
                    <div class="hidden_box_shop_posttime"> : {{ $shop->created_at}}</div>
                   </div>
               </div>      
-          </div>
+          
           
           <div class="hidden_box_shop">
-              <label>COMMENT</label>
+              <label>FAVORITES</label>
                   <div class="hidden_show">
-                   <div class="hidden_box_shop_content"> : {{ $shop->content }}</p>
+                   <div class="hidden_box_shop_favorites"> : {{ $count_favoriteings}} fovorites</div>
                   </div>
               </div>
           </div>  
-            
+          
+          <br>
+          
+          <div class="hidden_box_shop2">
+              <label>COMMENT</label>
+                  <div class="hidden_show">
+                   <div class="hidden_box_shop2_content"> : {{ $shop->content }}</p>
+                  </div>
+              </div>
+          </div>  
+    
             <br>
             <br>
     @include('shops.favorite_button', ['shop' => $shop],['class' => 'btn'])
@@ -200,8 +210,7 @@
                     @include('reviews.reviews', ['reviews' => $reviews])
         @endif
     </div>
-      
-
+   </div>   
 
 </body>
 

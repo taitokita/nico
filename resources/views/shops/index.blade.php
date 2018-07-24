@@ -19,7 +19,7 @@
                 <div class="searchform" class="col-md-3 col-sm-4 col-xs-6">
                     <form method="get" action="{{route('shops.index')}}">
                         <div style="display:inline-block">
-                       <input type="text" name="name" class="form-control" placeholder="keyword" class="search1">
+                       <input type="text" style="width:300px;height:31px ;" name="name" class="form-control" placeholder="keyword" class="search1">
                        <input type="hidden" name="maction" value="search">
                        </div>
                        <div style="display:inline-block">
@@ -45,8 +45,8 @@
                             <img src="{{asset('item/'.$shop->path)}}">
                         </div>
                         
-                        <div class="panel-body">
-                            <h3 class="shop-title">{!! link_to_route('shops.show', $shop->name, ['name' => $shop->id]) !!}</h>
+                        <div class="panel-body" id+"hoge" style="width:100%;">
+                            <h3 class="shop-title" id+"hoge" width="100%">{!! link_to_route('shops.show', $shop->name, ['name' => $shop->id]) !!}</h>
                         <br>
                         <div id="bottonshop" class="shop-favorite" class="buttons text-center ">
                                 @if (Auth::check())

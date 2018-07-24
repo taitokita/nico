@@ -205,6 +205,7 @@ class ShopsController extends Controller
         $tags = Tag::All();
         $tagLabel = '';
         $images = Image::where('shops_id', $id)->get();
+        $count_favoriteings = $user->favoriteings()->count();
        
         foreach ($tags as $tag) {
             if($tag->id == $shop->tag_id) {
@@ -220,6 +221,7 @@ class ShopsController extends Controller
             'user' => $user,
             'tags' =>$tags,
             'tagslabel' =>$tagLabel,
+            'count_favoriteings' =>$count_favoriteings
            
         ]);
     }
