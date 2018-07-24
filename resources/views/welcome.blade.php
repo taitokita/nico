@@ -39,7 +39,7 @@
                                </div>
                                <div style="display:inline-block">
                                     <p>  
-                                        <button class="btn btn-info btn-md">
+                                        <button class="btn btn-secondery btn-md height:35px">
                                             <span class="glyphicon glyphicon-search"></span>
                                         </button>
                                     </p> 

@@ -74,9 +74,10 @@
                
                <br>
                <br>
-               
+              <div class="button_create">
                <div class="submit">
-                 <input type="submit" value="Post" id="button-black"/>
+                 <input type="submit" value="Post" id="button_create"/>
+              </div>
                  
                  <div class="ease"></div>
                </div>
