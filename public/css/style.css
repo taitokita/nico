@@ -443,6 +443,7 @@ margin-top:-2px;
     text-overflow: ellipsis;
     white-space: nowrap;
     font-family: 'Indie Flower', cursive;
+    padding-top: 10%;
 }
 .shop-favorite{
     margin-top: 10px;

@@ -143,11 +143,16 @@
     
     <div class="form-group">
        {!! Form::model($shop, ['route' => ['shops.update', $shop->id], 'method' => 'put','files' => 'true', 'enctype'=>'multipart/form-data']) !!}
+       
+       <input name="name"  type="hidden" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input"name="name" placeholder="Shopname" id="name" value="{{$shop->name}}"/>
+       <input name="content" type="hidden" class="validate[required,length[6,300]] feedback-input" id="comment"  placeholder="Content" value="{{$shop->content}}"/>
+       <input  name="tag_id" type="hidden" class="form-control selectpicker"style="font-size: 18px" value="{{$shop->tag_id}}"/>
+       
            <form action="./filesend.cgi" method="post" enctype="multipart/form-data">
              <div class="add_photo">
                  <label class="filelabel2">
                     <span class="addicons">
-                       <img src="http://icooon-mono.com/i/icon_16250/icon_162500_256.png" width="30" height="30" >&nbsp;&nbsp;Photo
+                       <img src="http://icooon-mono.com/i/icon_16250/icon_162500_256.png" width="30" height="30" >&nbsp;&nbsp;Add Photo
                        <span id="selectednum"></span>
                     </span>
                     <input type="file" name="photo[]" id="filesend" multiple=",multiple" multiple accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png" class="file">

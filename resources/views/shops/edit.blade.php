@@ -40,16 +40,16 @@
          <select  name="tag_id" type="text" class="form-control selectpicker"style="font-size: 18px" >
    
                            <option class="content" data-icon="glyphicon-tag">&nbsp;&nbsp;Category</option>
-                           　<option value="1" name="1" <?php if($tag_id == 1){echo "selected";}?>>Japanese</option>
-            		     	<option value="2" name="2">French</option>
-            				<option value="3" name="3">italian</option>
-            				<option value="4" name="4">Chinese</option>
-            				<option value="5" name="5">Korean</option>
-            				<option value="6" name="6">Spanish</option>
-            				<option value="7" name="7">Indian</option>
-            				<option value="8" name="8">Ethnic</option>
-            				<option value="9" name="9">Izakaya・Bar</option>
-            				<option value="10" name="10">Café</option>
+                            <option value="1" name="1"<?php if($tag_id == 1){echo "selected";}?>>Japanese</option>
+            		     	<option value="2" name="2"<?php if($tag_id == 2){echo "selected";}?>>French</option>
+            				<option value="3" name="3"<?php if($tag_id == 3){echo "selected";}?>>italian</option>
+            				<option value="4" name="4"<?php if($tag_id == 4){echo "selected";}?>>Chinese</option>
+            				<option value="5" name="5"<?php if($tag_id == 5){echo "selected";}?>>Korean</option>
+            				<option value="6" name="6"<?php if($tag_id == 6){echo "selected";}?>>Spanish</option>
+            				<option value="7" name="7"<?php if($tag_id == 7){echo "selected";}?>>Indian</option>
+            				<option value="8" name="8"<?php if($tag_id == 8){echo "selected";}?>>Ethnic</option>
+            				<option value="9" name="9"<?php if($tag_id == 9){echo "selected";}?>>Izakaya・Bar</option>
+            				<option value="10" name="10"<?php if($tag_id == 10){echo "selected";}?>>Café</option>
          </select>
          <br>
          <br>
