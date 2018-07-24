@@ -305,7 +305,7 @@ margin-top:-2px;
   line-height : 1.8 ;
   border-bottom : solid 4px #fff ;
   border-left : solid 15px #fff ;
-  font-size: 2em;
+  font-size: 50px;
 }
 .cover6 .btn-success {
     background-color: #ed486f;
@@ -357,7 +357,7 @@ margin-top:-2px;
   font-weight: bold;
   letter-spacing: 0.15em;
   font-family: 'Limelight', cursive;
-  font-size: 2em;
+  font-size: 50px;
   margin : 1em 0 1.5em ;
   padding : 0em 0.5em ;
   line-height : 1.8 ;
@@ -2047,6 +2047,7 @@ color: #646464;
  color: #646464;
  border: solid 2px #e6e6fa;
  border-radius: 0px;
+ transition: .3s;
 }
 #button-blue{
  background-color: rgba(0,0,0,0);
@@ -2167,4 +2168,50 @@ width:125px;
  padding-left: 2%;
  padding-top: 15%;
  font-size: 18px;
+}
+
+#button_create:hover{
+background-color: #e6e6fa;
+color: #646464;
+border: solid 2px #e6e6fa;
+border-radius: 0px;
+}
+#button_create{
+background-color: rgba(0,0,0,0);
+color: #e6e6fa;
+font-family: 'Teko', sans-serif;
+font-size:50px;
+width:100%;
+height:10%;
+border: solid 2px #e6e6fa;
+border-radius: 0px;
+}
+
+.button_login {
+ background-color: rgba(0,0,0,0);
+ color: #e6e6fa;
+ font-family: 'Teko', sans-serif;
+ font-size:30px;
+ height: 45px;
+ width:130px;
+ border:solid 1px;
+  float:right;
+ margin-right:10px;
+}
+.button_login:hover {
+background-color: #BB713F;
+ color: #ffffff;
+}
+.button_signup {
+ background-color: rgba(0,0,0,0);
+ color: #e6e6fa;
+ font-family: 'Teko', sans-serif;
+ font-size:30px;
+ height: 45px;
+ width:130px;
+  border:solid 1px;
+}
+.button_signup:hover {
+background-color: #188291;
+ color: #ffffff;
 }

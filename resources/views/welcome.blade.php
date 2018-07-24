@@ -22,8 +22,13 @@
                           <p class="script"><span>by TK kingdom</span></p>
                         </div>
                     @if (!Auth::check())
-                        <a href="{{ route('signup.get') }}" class="btn btn-default btn-lg">Sign up</a>
-                        <a href="{{ route('login') }}"class="btn btn-default btn-lg">Log in</a>
+                        {!! Form::open(['route' => ['login'], 'method' => 'get']) !!}
+                                      <button class="button_login">Log in</button>
+                        {!! Form::close() !!}
+                       
+                        {!! Form::open(['route' => ['signup.get'], 'method' => 'get']) !!}
+                                      <button class="button_signup">Sign up</button>
+                        {!! Form::close() !!}
                     @else
                       <div class="searchform" class="col-md-3 col-sm-4 col-xs-6">
                             <form method="get" action="{{route('shops.index')}}">
