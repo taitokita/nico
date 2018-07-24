@@ -36,6 +36,7 @@ class ShopsController extends Controller
         
         if($_GET['maction'] == "search"){
             
+            $tag->id = 11;
         
             $ret = Shop::where('name', 'LIKE',"%".$_GET['name']."%")->get();
             if($ret != null) {

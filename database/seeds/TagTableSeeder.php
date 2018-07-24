@@ -42,6 +42,9 @@ class TagTableSeeder extends Seeder
             [
             'name' => 'Café',
             ],
+            [
+            'name' => '',
+            ],
          ]);    
     }
 }
