@@ -61,8 +61,9 @@
             </div>
             @include('shops.shops', ['shops' => $shops])
         </div>
-        
-    <div class="paginate">
+       </div> 
+    <div class="paginate" style="text-align:center;">
         {{ $shops->links() }}
     </div>
+    
 @endsection

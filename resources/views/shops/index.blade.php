@@ -75,9 +75,4 @@
         @endforeach    
     </div>
 @endif
-
-        <div class="paginate">
-            {{ $shops->links() }}
-        </div>
-
 @endsection
