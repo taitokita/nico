@@ -94,8 +94,10 @@
                           {!! Form::close() !!}
                   @endif
    </div>
-   <br>
-   <br>
+            <br>
+            <br>
+   @include('shops.favorite_button', ['shop' => $shop],['class' => 'btn'])
+            <br>
    <div class='showcontents'>
             <div class="hidden_box_shop">
               <label>NAME</label>
@@ -146,10 +148,6 @@
       </div> 
             <br>
             <br>
-    @include('shops.favorite_button', ['shop' => $shop],['class' => 'btn'])
-            <br>
-            
-        
     
     <div class="form-group">
        {!! Form::model($shop, ['route' => ['shops.update', $shop->id], 'method' => 'put','files' => 'true', 'enctype'=>'multipart/form-data']) !!}

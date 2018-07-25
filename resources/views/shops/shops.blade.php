@@ -36,7 +36,6 @@
                             foreach ($tags as $tag) {
                                 if($tag->id == $shop->tag_id) {
                                     $name = $tag->name;
-                               
                             break;
                                 }
                             }

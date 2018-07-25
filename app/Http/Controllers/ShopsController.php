@@ -160,16 +160,14 @@ class ShopsController extends Controller
             
             'name' => 'required|max:50', 
             'content' => 'required|max:191',
-            'tag_id' => 'required',
+            'tag_id' => 'required|integer|min:1',
 
         ]);
         
        if($request->file('photo')!=null && count($request->file('photo'))>0){
             foreach((array)$request->file('photo') as $gyu){
               $filepath = $gyu->store('photo');
-//              var_dump($gyu);
             }
-  //          return;
        }
        else {
         $filepath ='';
@@ -240,7 +238,7 @@ class ShopsController extends Controller
         $this->validate($request, [
             'name' => 'required|max:50', 
             'content' => 'required|max:191',
-            'tag_id' => 'required',
+            'tag_id' => 'required|integer|min:1',
         ]);
         
         if($request->file('photo')!=null && count($request->file('photo'))>0){

@@ -1,3 +1,3 @@
 <footer>
-    <div class="text-center text-muted">© 2018 TK Kingdom.</div>
+    <div class="text-center text-muted"><a href="/">© 2018 TK Kingdom.</a></div>
 </footer>

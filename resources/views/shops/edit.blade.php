@@ -39,7 +39,7 @@
 
          <select  name="tag_id" type="text" class="form-control selectpicker"style="font-size: 18px" >
    
-                           <option class="content" data-icon="glyphicon-tag">&nbsp;&nbsp;Category</option>
+                           <option class="content" data-icon="glyphicon-tag" value="0">&nbsp;&nbsp;Category</option>
                             <option value="1" name="1"<?php if($shop->tag_id == 1){echo "selected";}?>>Japanese</option>
             		     	<option value="2" name="2"<?php if($shop->tag_id == 2){echo "selected";}?>>French</option>
             				<option value="3" name="3"<?php if($shop->tag_id == 3){echo "selected";}?>>italian</option>
