@@ -255,7 +255,9 @@ class ShopsController extends Controller
         $shop->name = $request->name;
         $shop->content = $request->content;
         $shop->tag_id = Input::get('tag_id');
-        $shop->path = $filepath; 
+        if (!empty($filepath)) {
+            $shop->path = $filepath; 
+        }
         $shop->save();
         
         if($request->file('photo')!=null && count($request->file('photo'))>0){

@@ -34,11 +34,7 @@
     </div>
 <body>
      <div class=imageshowflame>
-      @if(empty($shop->path))
-     
-      @else
-     
-      @endif
+
      
       <div id="carousel-example" class="carousel slide" data-ride="carousel" data-inteerval="7000">
                   
@@ -58,6 +54,7 @@
                     ?>
                     <div class="item {{$opt}}">
                       <img src="{{asset('item/'.$image->url)}}" alt="">
+
                     </div>
                     @endforeach
                     

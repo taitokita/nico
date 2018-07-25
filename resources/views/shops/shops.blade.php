@@ -5,7 +5,11 @@
                 <div class="col-md-3 col-sm-4 col-xs-12">
                     <div class="panel panel-default">
                         <div id=images class="panel-heading text-center">
+                            @if(!empty($shop->path))
                             <img src="{{asset('item/'.$shop->path)}}">
+                            @else
+                            <img src="{{asset('images/noimages.png')}}">
+                            @endif
                         </div>
                         
                         <div class="panel-body">
