@@ -18,7 +18,7 @@ class ShopsController extends Controller
 {
     public function index()
     {
-        $shops = Shop::orderBy('updated_at', 'desc')->paginate(50);
+        $shops = Shop::orderBy('updated_at', 'desc')->paginate(20);
         $reviews = Review::all();
         $tags = Tag::All();
         $tagLabel = '';

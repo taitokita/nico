@@ -13,7 +13,7 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        $shops = Shop::orderBy('updated_at', 'desc')->paginate(50);
+        $shops = Shop::orderBy('updated_at', 'desc')->paginate(20);
         $tags = Tag::All();
         
         return view('welcome', [
