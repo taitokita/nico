@@ -19,7 +19,7 @@
                 <div class="searchform" class="col-md-3 col-sm-4 col-xs-6">
                     <form method="get" action="{{route('shops.index')}}">
                         <div style="display:inline-block">
-                       <input type="text" style="width:300px;height:31px ;" name="name" class="form-control" placeholder="keyword" class="search1">
+                       <input type="text" style="width:280px;height:31px ;" name="name" class="form-control" placeholder="keyword" class="search1">
                        <input type="hidden" name="maction" value="search">
                        </div>
                        <div style="display:inline-block">

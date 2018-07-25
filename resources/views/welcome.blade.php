@@ -35,7 +35,7 @@
                             <form method="get" action="{{route('shops.index')}}">
                                <div style="display:inline-block">
                                    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
-                                   <input type="text" style="width:300px;height:31px;" name="name" class="form-control" placeholder="keyword" class="search1">                            
+                                   <input type="text" style="width:280px;height:31px;" name="name" class="form-control" placeholder="keyword" class="search1">                            
                                    <input type="hidden" name="maction" value="search">
                                    <input type="hidden" name="_token" value="{{csrf_token()}}">
                                </div>

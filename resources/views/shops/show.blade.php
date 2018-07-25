@@ -132,7 +132,7 @@
                    <div class="hidden_box_shop_favorites"> : {{ $count_favoriteings}} fovorites</div>
                   </div>
               </div>
-          </div>  
+         
           
           <br>
           
@@ -143,7 +143,7 @@
                   </div>
               </div>
           </div>  
-    
+      </div> 
             <br>
             <br>
     @include('shops.favorite_button', ['shop' => $shop],['class' => 'btn'])
@@ -162,7 +162,7 @@
              <div class="add_photo">
                  <label class="filelabel2">
                     <span class="addicons">
-                       <img src="http://icooon-mono.com/i/icon_16250/icon_162500_256.png" width="30" height="30" >&nbsp;&nbsp;Add Photo
+                       <img src="http://icooon-mono.com/i/icon_16250/icon_162500_256.png" width="30" height="30" >&nbsp;&nbsp;&nbsp;Add Photo
                        <span id="selectednum"></span>
                     </span>
                     <input type="file" name="photo[]" id="filesend" multiple=",multiple" multiple accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png" class="file">

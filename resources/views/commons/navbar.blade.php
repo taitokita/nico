@@ -43,7 +43,7 @@
                            Category                                
                            <span class="caret"></span>                  
                    </a>
-                   <ul class="dropdown-menu">
+                   <ul class="dropdown-menu" style="width100%">
                               <li>
                                   <form method="get" action="{{route('shops.index')}}">
                                      <input type="hidden" name="maction" value="1">
@@ -80,7 +80,7 @@
                                      <input type="submit" value="Indian" class="btn btn-link">
                                  </form>
                              </li>
-<li><form method="get" action="{{route('shops.index')}}">
+                              <li><form method="get" action="{{route('shops.index')}}">
                                      <input type="hidden" name="maction" value="8">
                                      <input type="submit" value="Ethnic" class="btn btn-link">
                                  </form>
@@ -116,7 +116,7 @@
                                New Shop
                              </a>
                        </li>
-<li class="dropdown">
+                        <li class="dropdown">
                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                <span class="gravatar">
                                    <img src="{{ Gravatar::src(Auth::user()->email, 20) . '&d=mm' }}" alt="" class="img-circle">

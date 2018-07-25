@@ -59,7 +59,7 @@
                  <label style="width:100%;">
                      
                     <span class="filelabel" >
-                       <img src="http://icooon-mono.com/i/icon_16250/icon_162500_256.png" width="30" height="30" >&nbsp;&nbsp;Photo
+                       <img src="http://icooon-mono.com/i/icon_16250/icon_162500_256.png" width="30" height="30" >&nbsp;&nbsp;&nbsp;Photo
                        <span id="selectednum"></span>
                     </span>
                     <input type="file" name="photo[]" id="filesend" multiple=",multiple" multiple accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png" class="file">

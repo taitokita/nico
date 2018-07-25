@@ -28,7 +28,7 @@ class TagTableSeeder extends Seeder
             'name' => 'Korean',
             ],
             [
-            'name' => 'spanish',
+            'name' => 'Spanish',
             ],
             [
             'name' => 'Indian',

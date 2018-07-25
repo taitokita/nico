@@ -44,7 +44,7 @@
                                      <option class="content" data-icon="glyphicon-tag">&nbsp;&nbsp;Category</option>
                                      <option value="1" name="1">Japanese</option>
                       				<option value="2" name="2">French</option>
-                      				<option value="3" name="3">italian</option>
+                      				<option value="3" name="3">Italian</option>
                       				<option value="4" name="4">Chinese</option>
                       				<option value="5" name="5">Korean</option>
                       				<option value="6" name="6">Spanish</option>
@@ -61,7 +61,7 @@
                      <label style="width:100%;">
                          
                         <span class="filelabel" >
-                           <img src="http://icooon-mono.com/i/icon_16250/icon_162500_256.png" width="30" height="30" >&nbsp;&nbsp;Photo
+                           <img src="http://icooon-mono.com/i/icon_16250/icon_162500_256.png" width="30" height="30" >&nbsp;&nbsp;&nbsp;Photo
                            <span id="selectednum"></span>
                         </span>
                         <input type="file" name="photo[]" id="filesend" multiple=",multiple" multiple accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png" class="file">
