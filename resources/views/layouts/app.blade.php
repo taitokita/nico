@@ -25,6 +25,7 @@
        
        
        <style>
+        @import url('https://fonts.googleapis.com/css?family=Lobster');
         @import url('https://fonts.googleapis.com/css?family=Limelight');
         @import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
         @import url('https://fonts.googleapis.com/css?family=Chonburi');
