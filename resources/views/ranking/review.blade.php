@@ -19,4 +19,9 @@
     </div>
 </div>
     @include('shops.shops', ['shops' => $shops])
+    
+    <div class="paginate">
+            {{ $shops->links() }}
+    </div>
+        
 @endsection

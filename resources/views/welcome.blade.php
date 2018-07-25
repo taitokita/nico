@@ -15,12 +15,19 @@
         <div class="cover">
             <div class="cover-inner">
                 <div class="cover-contents">
-                            <div class="plate">
-                              <p class="script"><span>u gonna</span></p>
-                              <p class="shadow text2">Nico</p>
-                              <p class="script"><span>by TK kingdom</span></p>
-                            </div>
-                       
+                    <div class="hover-desc">
+                        <div class="plate">
+                          <p class="script"><span>u gonna</span></p>
+                          <p class="shadow text2">Nico</p>
+                          <p class="script"><span>by TK kingdom</span></p>
+                        </div>
+                        <div class="mask">
+                             <div class="caption"><br>One cannot think well, <br><br>
+                                                        love well, sleep well, <br><br>
+                                                        if one has not dined well.
+                             </div>
+                        </div>
+                    </div>
                     @if (!Auth::check())
                         {!! Form::open(['route' => ['login'], 'method' => 'get']) !!}
                                       <button class="button_login">Log in</button>
@@ -54,4 +61,8 @@
             </div>
             @include('shops.shops', ['shops' => $shops])
         </div>
+        
+    <div class="paginate">
+        {{ $shops->links() }}
+    </div>
 @endsection

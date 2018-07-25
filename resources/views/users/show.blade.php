@@ -52,6 +52,10 @@
       <!--非表示ここから-->     
       	@include('shops.shops',['shops' => $shops])
         {!! $shops->render() !!}
+        
+        <div class="paginate">
+            {{ $shops->links() }}
+        </div>
       <!--ここまで-->
     </div>
 </div>
@@ -62,6 +66,10 @@
       <!--非表示ここから-->     
       	@include('shops.shops1',['shops' => $shops1])
         {!! $shops->render() !!}
+        
+        <div class="paginate">
+            {{ $shops->links() }}
+        </div>
       <!--ここまで-->
     </div>
 </div>

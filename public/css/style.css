@@ -2273,3 +2273,54 @@ background-color: #188291;
  object-fit: cover;
 }
 
+.hover-desc {
+ position: relative;
+ overflow: hidden;
+}
+
+
+.plate {
+  width: 100%;
+  margin: 10% auto;
+}
+
+.cover-contents .hover-desc{
+ overflow:hidden;
+}
+
+.cover-contents .hover-desc .caption {
+	font-size:		170%;
+	/*padding-top:		80px;*/
+	/*padding-left:		20px;*/
+	padding-top: 15px;
+	height: 100%;
+	color: #fff;
+ font-family: 'Fredericka the Great', cursive;
+ /*text-shadow: 0 0 15px #fff, 0 0 25px #fff, 0 0 35px #fff, 0 0 45px #fff;*/
+ position:relative;
+ display:inline-block;
+}
+.cover-contents .hover-desc .mask {
+ /*visibility: hidden;*/
+	width:			100%;	/* 画像の半分の大きさにする */
+	height:			100%;
+	position:		absolute;
+	top:			0;
+	left:			0;
+	margin-left:		-100%;	/* 枠の左に置いて表示させない */
+	background-color:	rgba(0,0,0,0);
+	-webkit-transition:	all 0.4s ease;
+	transition:		all 0.4s ease;
+}
+.cover-contents .hover-desc:hover .mask {
+  /*visibility: visible;*/
+	margin-left:		0px;	/* 右にずらして表示する */
+}
+.cover-contents .hover-desc .plate {
+ margin-left:		0;
+	-webkit-transition:	all 0.4s ease;
+	transition:		all 0.4s ease;
+}
+.cover-contents .hover-desc:hover .plate {
+	margin-left:		100%;	/* 画像を半分サイズ、右にずらす */
+}

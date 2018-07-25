@@ -128,7 +128,7 @@
           <div class="hidden_box_shop">
               <label>FAVORITES</label>
                   <div class="hidden_show">
-                   <div class="hidden_box_shop_favorites"> : {{ $count_favoriteings}} fovorites</div>
+                   <div class="hidden_box_shop_favorites"> : {{ $count_favoriteings}} favorites</div>
                   </div>
               </div>
          
@@ -180,9 +180,6 @@
         <div></div>
             
              <br><br>
-             
-             
-             
         
   <div class="form-group">
       {!! Form::open(['route' => 'reviews.store']) !!}
