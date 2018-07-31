@@ -418,7 +418,7 @@ margin-top:-2px;
 }
 
 .dropdown-toggle{
-    font-size: 5em;
+    font-size:20px;
     margin-top: 7px;
     color:white;
 }
@@ -2092,7 +2092,7 @@ color: #646464;
  background-color: rgba(0,0,0,0);
  color: #e6e6fa;
  font-family: 'Teko', sans-serif;
-font-size:4em;
+font-size:18px;
  height:30px;
  width:125px;
  border:solid 0.5px #b71717;
@@ -2103,7 +2103,7 @@ font-size:4em;
  background-color: rgba(0,0,0,0);
  color: #e6e6fa;
  font-family: 'Teko', sans-serif;
-font-size:4em;
+font-size:18px;
  height:30px;
 width:125px;
  border:solid 0.5px #188291;
