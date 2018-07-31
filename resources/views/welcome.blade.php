@@ -42,7 +42,7 @@
                             <form method="get" action="{{route('shops.index')}}">
                                <div style="display:inline-block">
                                    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
-                                   <input type="text" style="width:280px;height:31px;" name="name" class="form-control" placeholder="keyword" class="search1">                            
+                                   <input type="text" style="width:248px;height:31px;" name="name" class="form-control" placeholder="keyword" class="search1">                            
                                    <input type="hidden" name="maction" value="search">
                                    <input type="hidden" name="_token" value="{{csrf_token()}}">
                                </div>
@@ -55,6 +55,95 @@
                                 </div>
                             </form>
                         </div> 
+                            
+                        <div>
+                            {!! Form::open(['route' => ['ranking.favorite'], 'method' => 'get']) !!}
+                                  <button class="button_edit">Favorite Ranking</button>
+                            {!! Form::close() !!}
+                            
+                            {!! Form::open(['route' => ['ranking.review'], 'method' => 'get']) !!}
+                                  <button id="button_delete_shop">Review Ranking</button>
+                            {!! Form::close() !!}
+                        </div> 
+                            
+                    
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        
+                <div class="dropdown">                            
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                       <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+                           Category                                
+                           <span class="caret"></span>                  
+                   </a>
+                   <ul class="dropdown-menu" style="width100%">
+                              <li>
+                                  <form method="get" action="{{route('shops.index')}}">
+                                     <input type="hidden" name="maction" value="1">
+                                     <input type="submit" value="Japanese" class="btn btn-link">
+                                 </form>
+                             </li>
+                              <li> <form method="get" action="{{route('shops.index')}}">
+                                     <input type="hidden" name="maction" value="2">
+                                     <input type="submit" value="French" class="btn btn-link">
+                                 </form>
+                             </li>
+                              <li><form method="get" action="{{route('shops.index')}}">
+                                     <input type="hidden" name="maction" value="3">
+                                     <input type="submit" value="Italian" class="btn btn-link">
+                                 </form>
+                             </li>
+                              <li><form method="get" action="{{route('shops.index')}}">
+                                     <input type="hidden" name="maction" value="4">
+                                     <input type="submit" value="Chinese" class="btn btn-link">
+                                 </form>
+                             </li>
+                              <li><form method="get" action="{{route('shops.index')}}">
+                                     <input type="hidden" name="maction" value="5">
+                                     <input type="submit" value="Korean" class="btn btn-link">
+                                 </form>
+                             </li>
+                              <li><form method="get" action="{{route('shops.index')}}">
+                                     <input type="hidden" name="maction" value="6">
+                                     <input type="submit" value="Spanish" class="btn btn-link">
+                                 </form>
+                             </li>
+                              <li><form method="get" action="{{route('shops.index')}}">
+                                     <input type="hidden" name="maction" value="7">
+                                     <input type="submit" value="Indian" class="btn btn-link">
+                                 </form>
+                             </li>
+                              <li><form method="get" action="{{route('shops.index')}}">
+                                     <input type="hidden" name="maction" value="8">
+                                     <input type="submit" value="Ethnic" class="btn btn-link">
+                                 </form>
+                             </li>
+                              <li><form method="get" action="{{route('shops.index')}}">
+                                     <input type="hidden" name="maction" value="9">
+                                     <input type="submit" value="Izakaya・Bar" class="btn btn-link">
+                                 </form>
+                             </li>
+                              <li><form method="get" action="{{route('shops.index')}}">
+                                     <input type="hidden" name="maction" value="10">
+                                     <input type="submit" value=" Café" class="btn btn-link">
+                                 </form>
+                             </li>
+                         </ul>
+                       </div>  
+                       
+                       
+                       
+                       
+                       
+                        
+                             
+                          
+                        
+                          
+                            
+                        
                     @endif
                     
                 </div>

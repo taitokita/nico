@@ -418,8 +418,9 @@ margin-top:-2px;
 }
 
 .dropdown-toggle{
-    font-size: 15px;
+    font-size: 5em;
     margin-top: 7px;
+    color:white;
 }
 
 
@@ -2091,7 +2092,7 @@ color: #646464;
  background-color: rgba(0,0,0,0);
  color: #e6e6fa;
  font-family: 'Teko', sans-serif;
-/* font-size:20px;*/
+font-size:4em;
  height:30px;
  width:125px;
  border:solid 0.5px #b71717;
@@ -2102,7 +2103,7 @@ color: #646464;
  background-color: rgba(0,0,0,0);
  color: #e6e6fa;
  font-family: 'Teko', sans-serif;
-/* font-size:20px;*/
+font-size:4em;
  height:30px;
 width:125px;
  border:solid 0.5px #188291;
@@ -2324,3 +2325,11 @@ background-color: #188291;
 .cover-contents .hover-desc:hover .plate {
 	margin-left:		100%;	/* 画像を半分サイズ、右にずらす */
 }
+
+
+
+
+
+
+
+

@@ -125,12 +125,12 @@
               </div>      
           
           
-          <div class="hidden_box_shop">
-              <label>FAVORITES</label>
-                  <div class="hidden_show">
-                   <div class="hidden_box_shop_favorites"> : {{ $count_favoriteings}} favorites</div>
-                  </div>
-              </div>
+          <!--<div class="hidden_box_shop">-->
+          <!--    <label>FAVORITES</label>-->
+          <!--        <div class="hidden_show">-->
+          <!--         <div class="hidden_box_shop_favorites"> : {{ $count_favoriteings}} favorites</div>-->
+          <!--        </div>-->
+          <!--    </div>-->
          
           
           <br>
@@ -168,7 +168,7 @@
             
             <div class="submit_add">     
               <div class="submit">
-                      <input type="submit" value="Post" id="button-add"/>
+                      <input type="submit" value="Post Photo" id="button-add"/>
               </div>
             </div>
         </div>
@@ -191,7 +191,7 @@
              </div>
         <div class="submit_comment">     
           <div class="submit">
-                  <input type="submit" value="Post" id="button-blue"/>
+                  <input type="submit" value="Post comment" id="button-blue"/>
           </div>
         </div>
       {!! Form::close() !!}
